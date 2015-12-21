@@ -11,7 +11,7 @@ eligible.Payer.retrieve(62308)
     console.log('Connection Error');
 })
 .catch(Eligible.AuthenticationError, function(e){
-    console.log('Authentication Error');
+    console.log('Authentication Error', e.message, e.code);
 })
 .catch(function(e){
 	console.log(e);
