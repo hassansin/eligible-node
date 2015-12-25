@@ -2,7 +2,9 @@
   "name": "eligible-node",
   "version": "0.0.1",
   "description": "Eligible Node.js bindings https://eligible.com",
-  "keywords": ["eligible-api"],
+  "keywords": [
+    "eligible-api"
+  ],
   "main": "./lib/eligible.js",
   "directories": {
     "test": "./test",
@@ -28,12 +30,14 @@
   "homepage": "https://eligible.com/",
   "devDependencies": {
     "chai": "^3.4.1",
+    "fs-extra": "^0.26.3",
     "gulp": "^3.9.0",
     "gulp-jshint": "^2.0.0",
     "istanbul": "^0.4.1",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "nock": "^3.6.0"
   },
   "dependencies": {
     "bluebird": "^3.1.1",
