@@ -90,6 +90,6 @@ Testing
 ```js
 
 npm test
-npm test-coverage
+npm run test-coverage
 
 ```

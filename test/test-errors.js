@@ -24,9 +24,9 @@ describe('Error', function(){
         assert.isTrue(errors.EligibleError.prototype.isPrototypeOf(error));
       });
 
-      /*it('should identify as an Error object - [object Error]', function (done) {
+      it.skip('should identify as an Error object - [object Error]', function (done) {
         Object.prototype.toString.call(error).should.equal('[object Error]');
-      });*/
+      });
 
       it('should have name of '+ errorClass, function(){
         assert.equal(error.name, errorClass);

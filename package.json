@@ -2,18 +2,28 @@
   "name": "eligible-node",
   "version": "0.0.1",
   "description": "Eligible Node.js bindings https://eligible.com",
+  "keywords": ["eligible-api"],
   "main": "./lib/eligible.js",
   "directories": {
-    "test": "test"
+    "test": "./test",
+    "examples": "./examples",
+    "lib": "./lib"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
-    "test-coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha"
+    "test": "mocha",
+    "test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha"
   },
   "engines": {
     "node": ">=0.8.0"
   },
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eligible/eligible-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eligible/eligible-node/issues"
+  },
   "license": "MIT",
   "homepage": "https://eligible.com/",
   "devDependencies": {
