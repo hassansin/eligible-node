@@ -2,7 +2,7 @@ var gulp   = require('gulp'),
     jshint = require('gulp-jshint');
 
 // define the default task and add the watch task to it
-gulp.task('default', ['watch']);
+gulp.task('default', ['jshint','watch']);
 
 // configure the jshint task
 gulp.task('jshint', function() {
