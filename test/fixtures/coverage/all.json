@@ -1,0 +1,1417 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/coverage/all.json?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 400,
+    "response": {
+      "created_at": "2015-12-25T23:08:45Z",
+      "eligible_id": "8I8NV7XXSSVKJ0",
+      "error": {
+        "response_code": "Y",
+        "response_description": "Yes",
+        "agency_qualifier_code": "",
+        "agency_qualifier_description": null,
+        "reject_reason_code": "41",
+        "reject_reason_description": "Authorization/Access Restrictions",
+        "follow_up_action_code": "C",
+        "follow_up_action_description": "Please Correct and Resubmit",
+        "details": "NPI length should be 10 digits, please correct and resubmit."
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Fri, 25 Dec 2015 23:08:45 GMT",
+      "content-type": "application/json",
+      "content-length": "442",
+      "connection": "close",
+      "status": "400 Bad Request",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/coverage/all.json?payer_id=00001&provider_last_name=Doe&provider_first_name=John&provider_npi=0123456789&member_id=ZZZ445554301&member_first_name=IDA&member_last_name=FRANKLIN&member_dob=1701-12-12&service_type=30&api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "created_at": "2013-11-13T18:41:12-05:00",
+      "eligible_id": "UJ14J2SCZ1843",
+      "demographics": {
+        "subscriber": {
+          "last_name": "FRANKLIN",
+          "first_name": "BEN",
+          "member_id": "AETNA1234",
+          "group_id": "047653201500945",
+          "group_name": "FREEDOM GROUP  INC.",
+          "dob": "1757-05-23",
+          "gender": "M",
+          "address": {
+            "street_line_1": "323 REASON ROAD",
+            "street_line_2": null,
+            "city": "HILLSBORO",
+            "state": "TX",
+            "zip": "76645"
+          }
+        },
+        "dependent": {}
+      },
+      "insurance": {
+        "name": "AETNA INC",
+        "id": "00002",
+        "payer_type": "PR",
+        "payer_type_label": "Payer",
+        "contacts": [],
+        "service_providers": {
+          "physicians": [
+            {
+              "eligibility_code": "L",
+              "eligibility_code_label": "Primary Care Provider",
+              "insurance_type": "PS",
+              "insurance_type_label": "Point of Service (POS)",
+              "primary_care": true,
+              "restricted": null,
+              "contact_details": [],
+              "dates": [],
+              "comments": [
+                "PCP SELECTION NOT REQUIRED"
+              ]
+            }
+          ]
+        }
+      },
+      "plan": {
+        "type": "30",
+        "coverage_status": "1",
+        "coverage_status_label": "Active Coverage",
+        "coverage_basis": [],
+        "plan_number": "0476532",
+        "plan_name": "HSA Aetna Choice POS II",
+        "plan_type": "PS",
+        "plan_type_label": "Point of Service (POS)",
+        "group_name": "TRIUMPH GROUP  INC.",
+        "dates": [
+          {
+            "date_type": "plan_begin",
+            "date_value": "2011-07-01"
+          },
+          {
+            "date_type": "service",
+            "date_value": "2013-11-13"
+          },
+          {
+            "date_type": "eligibility_begin",
+            "date_value": "2011-07-01"
+          }
+        ],
+        "comments": [],
+        "exclusions": {
+          "noncovered": [],
+          "pre_existing_condition": {
+            "waiting_period": []
+          }
+        },
+        "financials": {
+          "deductible": {
+            "remainings": {
+              "in_network": [
+                {
+                  "amount": "4238.35",
+                  "level": "FAMILY",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": [
+                    "INT MED AND RX"
+                  ]
+                }
+              ],
+              "out_network": []
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [
+                {
+                  "amount": "4350",
+                  "time_period": "25",
+                  "time_period_label": "contract",
+                  "level": "FAMILY",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [
+                    {
+                      "date_type": "eligibilty",
+                      "date_value": "2013-07-01"
+                    }
+                  ],
+                  "comments": [
+                    "INT MED AND RX,DED INCLUDED IN OOP,Visit or Evaluation by Chiropractor,Manipulation by Chiropractor,Emergency use of Emergency Room,Outpatient Surgery Facility,Outpatient Medical Ancillary,Ambulatory Medical Ancillary,Medical Ancillary,Inpatient Xray and Lab",
+                    "Room and Board,Intensive Care Room and Board,Non Emergency use of Emergency Room,Emergency Room Physician,Urgent Care,Non Urgent Services at an Urgent Care Facility,GYN Visit,Specialist Visit or Evaluation,Primary Care Visit or Evaluation,Physician Xray and Lab",
+                    "Xray and Lab,Outpatient Xray and Lab"
+                  ]
+                }
+              ],
+              "out_network": []
+            }
+          },
+          "stop_loss": {
+            "remainings": {
+              "in_network": [
+                {
+                  "amount": "4862.15",
+                  "level": "FAMILY",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": []
+                }
+              ],
+              "out_network": [
+                {
+                  "amount": "9237.15",
+                  "level": "FAMILY",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": []
+                }
+              ]
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [
+                {
+                  "amount": "4975",
+                  "time_period": null,
+                  "time_period_label": null,
+                  "level": "FAMILY",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": [
+                    "In-Network Providers"
+                  ]
+                }
+              ],
+              "out_network": [
+                {
+                  "amount": "9350",
+                  "time_period": null,
+                  "time_period_label": null,
+                  "level": "FAMILY",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": []
+                }
+              ]
+            }
+          },
+          "coinsurance": {
+            "percents": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "copayment": {
+            "amounts": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "cost_containment": {
+            "remainings": {
+              "in_network": [],
+              "out_network": []
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "spend_down": {
+            "remainings": {
+              "in_network": [],
+              "out_network": []
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "limitations": {
+            "amounts": [
+              {
+                "amount": null,
+                "time_period": null,
+                "time_period_label": null,
+                "level": "Employee and Spouse",
+                "network": "IN",
+                "insurance_type": null,
+                "insurance_type_label": null,
+                "pos": null,
+                "pos_label": null,
+                "authorization_required": null,
+                "description": null,
+                "contact_details": [],
+                "dates": [],
+                "comments": [
+                  "Plan Requires PreCert"
+                ]
+              },
+              {
+                "amount": null,
+                "time_period": null,
+                "time_period_label": null,
+                "level": "Employee and Spouse",
+                "network": "IN",
+                "insurance_type": null,
+                "insurance_type_label": null,
+                "pos": null,
+                "pos_label": null,
+                "authorization_required": null,
+                "description": null,
+                "contact_details": [],
+                "dates": [],
+                "comments": [
+                  "Self Funded"
+                ]
+              },
+              {
+                "amount": null,
+                "time_period": "32",
+                "time_period_label": "lifetime",
+                "level": "Employee and Spouse",
+                "network": "IN",
+                "insurance_type": null,
+                "insurance_type_label": null,
+                "pos": null,
+                "pos_label": null,
+                "authorization_required": null,
+                "description": null,
+                "contact_details": [],
+                "dates": [],
+                "comments": [
+                  "Unlimited Lifetime Benefits"
+                ]
+              }
+            ]
+          },
+          "disclaimer": [],
+          "other_sources": {
+            "amounts": [
+              {
+                "amount": null,
+                "time_period": null,
+                "time_period_label": null,
+                "level": "INDIVIDUAL",
+                "network": "IN",
+                "insurance_type": null,
+                "insurance_type_label": null,
+                "pos": null,
+                "pos_label": null,
+                "authorization_required": null,
+                "description": null,
+                "contact_details": [
+                  {
+                    "entity_code": "PR",
+                    "entity_code_label": "Payer",
+                    "last_name": "Aetna",
+                    "first_name": null,
+                    "identification_type": null,
+                    "identification_code": null,
+                    "contacts": [],
+                    "address": {
+                      "street_line_1": "PO Box 14079",
+                      "street_line_2": null,
+                      "city": "Lexington",
+                      "state": "KY",
+                      "zip": "40512"
+                    }
+                  }
+                ],
+                "dates": [],
+                "comments": []
+              }
+            ]
+          }
+        },
+        "benefit_details": {
+          "benefit_description": {
+            "amounts": []
+          },
+          "managed_care": {
+            "amounts": []
+          },
+          "unlimited": {
+            "amounts": []
+          }
+        },
+        "additional_insurance_policies": []
+      },
+      "services": [
+        {
+          "type": "47",
+          "type_label": "Hospital",
+          "coverage_status": "1",
+          "coverage_status_label": "Active Coverage",
+          "coverage_basis": [],
+          "facility": {
+            "amounts": []
+          },
+          "noncovered": [],
+          "benefit_details": {
+            "benefit_description": {
+              "amounts": []
+            },
+            "managed_care": {
+              "amounts": []
+            },
+            "unlimited": {
+              "amounts": []
+            }
+          },
+          "financials": {
+            "deductible": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "stop_loss": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "coinsurance": {
+              "percents": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "copayment": {
+              "amounts": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "cost_containment": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "spend_down": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "limitations": {
+              "amounts": []
+            },
+            "disclaimer": [],
+            "other_sources": {
+              "amounts": []
+            }
+          },
+          "visits": {
+            "remainings": {
+              "in_network": [],
+              "out_network": []
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "additional_insurance_policies": [
+            {
+              "insurance_type": null,
+              "insurance_type_label": null,
+              "coverage_description": null,
+              "reference": [],
+              "contact_details": [],
+              "dates": [],
+              "comments": []
+            }
+          ]
+        },
+        {
+          "type": "48",
+          "type_label": "Hospital - Inpatient",
+          "coverage_status": "1",
+          "coverage_status_label": "Active Coverage",
+          "coverage_basis": [],
+          "facility": {
+            "amounts": []
+          },
+          "noncovered": [],
+          "benefit_details": {
+            "benefit_description": {
+              "amounts": []
+            },
+            "managed_care": {
+              "amounts": []
+            },
+            "unlimited": {
+              "amounts": []
+            }
+          },
+          "financials": {
+            "deductible": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "stop_loss": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "coinsurance": {
+              "percents": {
+                "in_network": [
+                  {
+                    "percent": "10",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "In-Network Providers",
+                      "Medical Ancillary,COINS APPLIES TO OUT OF POCKET",
+                      "Inpatient Xray and Lab,COINS APPLIES TO OUT OF POCKET",
+                      "Room and Board,COINS APPLIES TO OUT OF POCKET",
+                      "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"
+                    ]
+                  }
+                ],
+                "out_network": [
+                  {
+                    "percent": "30",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "Medical Ancillary,COINS APPLIES TO OUT OF POCKET",
+                      "Inpatient Xray and Lab,COINS APPLIES TO OUT OF POCKET",
+                      "Room and Board,COINS APPLIES TO OUT OF POCKET",
+                      "Intensive Care Room and Board,COINS APPLIES TO OUT OF POCKET"
+                    ]
+                  }
+                ]
+              }
+            },
+            "copayment": {
+              "amounts": {
+                "in_network": [
+                  {
+                    "amount": "0",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "Room and Board"
+                    ]
+                  }
+                ],
+                "out_network": []
+              }
+            },
+            "cost_containment": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "spend_down": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "limitations": {
+              "amounts": [
+                {
+                  "amount": null,
+                  "time_period": null,
+                  "time_period_label": null,
+                  "level": "Employee and Spouse",
+                  "network": "IN",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": [
+                    "Plan includes NAP"
+                  ]
+                }
+              ]
+            },
+            "disclaimer": [],
+            "other_sources": {
+              "amounts": []
+            }
+          },
+          "visits": {
+            "remainings": {
+              "in_network": [],
+              "out_network": []
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "additional_insurance_policies": [
+            {
+              "insurance_type": null,
+              "insurance_type_label": null,
+              "coverage_description": null,
+              "reference": [],
+              "contact_details": [],
+              "dates": [],
+              "comments": []
+            }
+          ]
+        },
+        {
+          "type": "50",
+          "type_label": "Hospital - Outpatient",
+          "coverage_status": "1",
+          "coverage_status_label": "Active Coverage",
+          "coverage_basis": [],
+          "facility": {
+            "amounts": []
+          },
+          "noncovered": [],
+          "benefit_details": {
+            "benefit_description": {
+              "amounts": []
+            },
+            "managed_care": {
+              "amounts": []
+            },
+            "unlimited": {
+              "amounts": []
+            }
+          },
+          "financials": {
+            "deductible": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "stop_loss": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "coinsurance": {
+              "percents": {
+                "in_network": [
+                  {
+                    "percent": "10",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "In-Network Providers",
+                      "COINS APPLIES TO OUT OF POCKET"
+                    ]
+                  }
+                ],
+                "out_network": [
+                  {
+                    "percent": "30",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "COINS APPLIES TO OUT OF POCKET"
+                    ]
+                  }
+                ]
+              }
+            },
+            "copayment": {
+              "amounts": {
+                "in_network": [
+                  {
+                    "amount": "0",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "In-Network Providers",
+                      "Outpatient Medical Ancillary"
+                    ]
+                  },
+                  {
+                    "amount": "0",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": true,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "Outpatient Surgery Facility",
+                      "Medical Ancillary"
+                    ]
+                  }
+                ],
+                "out_network": []
+              }
+            },
+            "cost_containment": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "spend_down": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "limitations": {
+              "amounts": [
+                {
+                  "amount": null,
+                  "time_period": null,
+                  "time_period_label": null,
+                  "level": "Employee and Spouse",
+                  "network": "IN",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": [
+                    "Plan includes NAP"
+                  ]
+                }
+              ]
+            },
+            "disclaimer": [],
+            "other_sources": {
+              "amounts": []
+            }
+          },
+          "visits": {
+            "remainings": {
+              "in_network": [],
+              "out_network": []
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "additional_insurance_policies": [
+            {
+              "insurance_type": null,
+              "insurance_type_label": null,
+              "coverage_description": null,
+              "reference": [],
+              "contact_details": [],
+              "dates": [],
+              "comments": []
+            }
+          ]
+        },
+        {
+          "type": "51",
+          "type_label": "Hospital - Emergency Accident",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=51 for an explicit inquiry for this service type."
+        },
+        {
+          "type": "52",
+          "type_label": "Hospital - Emergency Medical",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=52 for an explicit inquiry for this service type."
+        },
+        {
+          "type": "53",
+          "type_label": "Hospital - Ambulatory Surgical",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=53 for an explicit inquiry for this service type."
+        },
+        {
+          "type": "96",
+          "type_label": "Professional (Physician)",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=96 for an explicit inquiry for this service type."
+        },
+        {
+          "type": "98",
+          "type_label": "Professional (Physician) Visit - Office",
+          "coverage_status": "1",
+          "coverage_status_label": "Active Coverage",
+          "coverage_basis": [],
+          "facility": {
+            "amounts": []
+          },
+          "noncovered": [],
+          "benefit_details": {
+            "benefit_description": {
+              "amounts": []
+            },
+            "managed_care": {
+              "amounts": []
+            },
+            "unlimited": {
+              "amounts": []
+            }
+          },
+          "financials": {
+            "deductible": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "stop_loss": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "coinsurance": {
+              "percents": {
+                "in_network": [
+                  {
+                    "percent": "10",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "In-Network Providers",
+                      "GYN Visit,COINS APPLIES TO OUT OF POCKET",
+                      "Specialist Visit or Evaluation,COINS APPLIES TO OUT OF POCKET",
+                      "Primary Care Visit or Evaluation,COINS APPLIES TO OUT OF POCKET"
+                    ]
+                  }
+                ],
+                "out_network": [
+                  {
+                    "percent": "30",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "GYN Visit,COINS APPLIES TO OUT OF POCKET",
+                      "Specialist Visit or Evaluation,COINS APPLIES TO OUT OF POCKET",
+                      "Primary Care Visit or Evaluation,COINS APPLIES TO OUT OF POCKET"
+                    ]
+                  }
+                ]
+              }
+            },
+            "copayment": {
+              "amounts": {
+                "in_network": [
+                  {
+                    "amount": "0",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": true,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "GYN Visit",
+                      "Specialist Visit or Evaluation",
+                      "Primary Care Visit or Evaluation"
+                    ]
+                  }
+                ],
+                "out_network": []
+              }
+            },
+            "cost_containment": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "spend_down": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "limitations": {
+              "amounts": [
+                {
+                  "amount": null,
+                  "time_period": null,
+                  "time_period_label": null,
+                  "level": "Employee and Spouse",
+                  "network": "IN",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": [
+                    "Plan includes NAP"
+                  ]
+                }
+              ]
+            },
+            "disclaimer": [],
+            "other_sources": {
+              "amounts": []
+            }
+          },
+          "visits": {
+            "remainings": {
+              "in_network": [],
+              "out_network": []
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "additional_insurance_policies": [
+            {
+              "insurance_type": null,
+              "insurance_type_label": null,
+              "coverage_description": null,
+              "reference": [],
+              "contact_details": [],
+              "dates": [],
+              "comments": []
+            }
+          ]
+        },
+        {
+          "type": "99",
+          "type_label": "Professional (Physician) Visit - Inpatient",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=99 for an explicit inquiry for this service type."
+        },
+        {
+          "type": "A0",
+          "type_label": "Professional (Physician) Visit - Outpatient",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=A0 for an explicit inquiry for this service type."
+        },
+        {
+          "type": "A1",
+          "type_label": "Professional (Physician) Visit - Nursing Home",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=A1 for an explicit inquiry for this service type."
+        },
+        {
+          "type": "A3",
+          "type_label": "Professional (Physician) Visit - Home",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=A3 for an explicit inquiry for this service type."
+        },
+        {
+          "type": "BZ",
+          "type_label": "Physician Visit - Well",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=BZ for an explicit inquiry for this service type."
+        },
+        {
+          "type": "BY",
+          "type_label": "Physician Visit - Sick",
+          "coverage_status": "11",
+          "coverage_status_label": "Generic inquiry provided no information for this service type. Retry by including service_type_code=BY for an explicit inquiry for this service type."
+        },
+        {
+          "type": "UC",
+          "type_label": "Urgent Care",
+          "coverage_status": "1",
+          "coverage_status_label": "Active Coverage",
+          "coverage_basis": [],
+          "facility": {
+            "amounts": []
+          },
+          "noncovered": [],
+          "benefit_details": {
+            "benefit_description": {
+              "amounts": []
+            },
+            "managed_care": {
+              "amounts": []
+            },
+            "unlimited": {
+              "amounts": []
+            }
+          },
+          "financials": {
+            "deductible": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "stop_loss": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "coinsurance": {
+              "percents": {
+                "in_network": [
+                  {
+                    "percent": "10",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "In-Network Providers",
+                      "COINS APPLIES TO OUT OF POCKET"
+                    ]
+                  }
+                ],
+                "out_network": [
+                  {
+                    "percent": "30",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": null,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": [
+                      "COINS APPLIES TO OUT OF POCKET"
+                    ]
+                  }
+                ]
+              }
+            },
+            "copayment": {
+              "amounts": {
+                "in_network": [
+                  {
+                    "amount": "0",
+                    "time_period": null,
+                    "time_period_label": null,
+                    "level": "Employee and Spouse",
+                    "insurance_type": null,
+                    "insurance_type_label": null,
+                    "pos": null,
+                    "pos_label": null,
+                    "authorization_required": true,
+                    "description": null,
+                    "contact_details": [],
+                    "dates": [],
+                    "comments": []
+                  }
+                ],
+                "out_network": []
+              }
+            },
+            "cost_containment": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "spend_down": {
+              "remainings": {
+                "in_network": [],
+                "out_network": []
+              },
+              "spent": {
+                "in_network": [],
+                "out_network": []
+              },
+              "totals": {
+                "in_network": [],
+                "out_network": []
+              }
+            },
+            "limitations": {
+              "amounts": [
+                {
+                  "amount": null,
+                  "time_period": null,
+                  "time_period_label": null,
+                  "level": "Employee and Spouse",
+                  "network": "IN",
+                  "insurance_type": null,
+                  "insurance_type_label": null,
+                  "pos": null,
+                  "pos_label": null,
+                  "authorization_required": null,
+                  "description": null,
+                  "contact_details": [],
+                  "dates": [],
+                  "comments": [
+                    "Plan includes NAP"
+                  ]
+                }
+              ]
+            },
+            "disclaimer": [],
+            "other_sources": {
+              "amounts": []
+            }
+          },
+          "visits": {
+            "remainings": {
+              "in_network": [],
+              "out_network": []
+            },
+            "spent": {
+              "in_network": [],
+              "out_network": []
+            },
+            "totals": {
+              "in_network": [],
+              "out_network": []
+            }
+          },
+          "additional_insurance_policies": [
+            {
+              "insurance_type": null,
+              "insurance_type_label": null,
+              "coverage_description": null,
+              "reference": [],
+              "contact_details": [],
+              "dates": [],
+              "comments": []
+            }
+          ]
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Fri, 25 Dec 2015 23:08:47 GMT",
+      "content-type": "application/json",
+      "content-length": "21318",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]
