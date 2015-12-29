@@ -29,13 +29,14 @@ describe('Coverage', function() {
       expect(Coverage).to.have.property('all');
     });
 
-    it('should throw InvalidRequestError when no param is passed', function(done) {
-      Coverage.all()
-        .catch(function(e) {
-          expect(e).to.be.an.instanceOf(errors.InvalidRequestError);
-          done();
-        });
-    });
+    it('should throw InvalidRequestError when no param is passed',
+      function(done) {
+        Coverage.all()
+          .catch(function(e) {
+            expect(e).to.be.an.instanceOf(errors.InvalidRequestError);
+            done();
+          });
+      });
 
     it('should fetch coverage', function(done) {
       Coverage.all({
