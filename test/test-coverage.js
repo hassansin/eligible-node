@@ -15,9 +15,10 @@ describe('Coverage', function(){
   before(function() {
     config = new Config({
       apiKey: 'n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn',
-      isTest: true
-    });
+      isTest: true,
+    });    
     Coverage = coverage(config);
+    process.env.NODE_ENV = 'testing';
   });
 
   describe('#all', function(){
@@ -51,6 +52,9 @@ describe('Coverage', function(){
       .then(function(coverage){
         expect(coverage).to.be.an.instanceOf(Coverage);
         done();
+      })
+      .catch(function(e){
+        done(e);
       });
     });
 
