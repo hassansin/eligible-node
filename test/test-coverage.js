@@ -1,14 +1,10 @@
-var errors = require('../lib/errors');
-var assert = require('chai').assert;
-var expect = require('chai').expect;
-var record_or_play = require('./record');
+var errors = require('../lib/errors'),
+    expect = require('chai').expect,
+    playback = require('./record'),
+    coverage = require('../lib/models/coverage'),
+    Config = require('../lib/http/config');
 
-var coverage = require('../lib/models/coverage');
-var Config = require('../lib/http/config');
-
-
-var config;
-var Coverage;
+var config, Coverage;
 
 describe('Coverage', function() {
 
@@ -23,7 +19,7 @@ describe('Coverage', function() {
 
   describe('#all', function() {
 
-    record_or_play('coverage/all');
+    playback('coverage/all');
 
     it('exists as public method on Coverage', function() {
       expect(Coverage).to.have.property('all');
@@ -32,6 +28,10 @@ describe('Coverage', function() {
     it('should throw InvalidRequestError when no param is passed',
       function(done) {
         Coverage.all()
+          .then(function(coverage) {
+            // Success, where we were expecting an error - test should fail
+            done(new Error('Expecting InvalidRequestError, got 200'));
+          })
           .catch(function(e) {
             expect(e).to.be.an.instanceOf(errors.InvalidRequestError);
             done();
@@ -39,6 +39,8 @@ describe('Coverage', function() {
       });
 
     it('should fetch coverage', function(done) {
+      // jshint camelcase: false
+      // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
       Coverage.all({
         payer_id: '00001',
         provider_last_name: 'Doe',

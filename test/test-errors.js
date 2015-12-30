@@ -6,7 +6,7 @@ function createsError(key) {
 }
 describe('Error', function() {
   before(function() {
-    process.env.ELIGIBLE_API_KEY = 'baz'
+    process.env.ELIGIBLE_API_KEY = 'baz';
     process.env.ELIGIBLE_IS_TEST = 'true';
   });
 
@@ -25,7 +25,7 @@ describe('Error', function() {
       });
 
       it.skip('should identify as an Error object - [object Error]',
-        function(done) {
+        function() {
         Object.prototype.toString.call(error).should.equal('[object Error]');
       });
 
@@ -44,5 +44,5 @@ describe('Error', function() {
       });
 
     });
-  })
+  });
 });

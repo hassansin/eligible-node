@@ -1,0 +1,9 @@
+{
+  "preset": "node-style-guide",
+  "fileExtensions": [".js", "jscs"],
+  "disallowMultipleVarDecl": false,
+  "excludeFiles": [
+    "test/fixtures/**",
+    "node_modules/*"
+  ]
+}

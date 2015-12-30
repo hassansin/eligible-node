@@ -64,5 +64,13 @@
     "nonstandard"   : true,    // Widely adopted globals (escape, unescape, etc)
 
     // Custom Globals
-    "globals"       : {}        // additional predefined global variables
+    "globals"       : {
+        /* MOCHA */
+        "describe"   : false,
+        "it"         : false,
+        "before"     : false,
+        "beforeEach" : false,
+        "after"      : false,
+        "afterEach"  : false    
+    }        // additional predefined global variables
 }
