@@ -1,0 +1,256 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/coverage/medicare.json?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 400,
+    "response": {
+      "created_at": "2015-12-31T07:38:18Z",
+      "eligible_id": "UMTFSF6ESMYFQ",
+      "error": {
+        "response_code": "Y",
+        "response_description": "Yes",
+        "agency_qualifier_code": "",
+        "agency_qualifier_description": null,
+        "reject_reason_code": "41",
+        "reject_reason_description": "Authorization/Access Restrictions",
+        "follow_up_action_code": "C",
+        "follow_up_action_description": "Please Correct and Resubmit",
+        "details": "NPI length should be 10 digits, please correct and resubmit."
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Thu, 31 Dec 2015 07:38:18 GMT",
+      "content-type": "application/json",
+      "content-length": "441",
+      "connection": "close",
+      "status": "400 Bad Request",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/coverage/medicare.json?provider_npi=0123456789&member_id=ZZZ445554301&api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "created_at": "2013-07-17T18:11:01Z",
+      "eligible_id": "UJ11WL1J0IU4A",
+      "last_name": "LNAME",
+      "first_name": "FNAME",
+      "member_id": "123456789A",
+      "group_id": "070607801700001",
+      "group_name": "SOME GROUP COMPANIES",
+      "dob": "1940-04-01",
+      "gender": "F",
+      "address": {
+        "street_line_1": "ADDRESSLINE1",
+        "street_line_2": "ADDRESSLINE2",
+        "city": "CITY",
+        "state": "ST",
+        "zip": "920543314"
+      },
+      "payer_name": "CMS",
+      "payer_id": null,
+      "plan_number": "0706078",
+      "eligibilty_dates": {
+        "start": "2012-02-01",
+        "end": "2013-03-31"
+      },
+      "inactivity_dates": {
+        "start": "2012-03-01",
+        "end": "2012-05-03"
+      },
+      "plan_types": {
+        "MA": "Medicare Part A (Hospital)",
+        "MB": "Medicare Part B (Professional Services)",
+        "MC": "Medicare Part C (Advantage)",
+        "MD": "Medicare Part D (Prescription drugs)",
+        "PR": "Primary insurance (Medicare Secondary, Other Insurance is Primary)"
+      },
+      "plan_details": {
+        "MA": {
+          "active": true,
+          "start_date": "2005-04-01",
+          "end_date": null,
+          "deductible": 1184,
+          "deductible_remaining": 1184,
+          "coinsurance_percent": null,
+          "copayment": null,
+          "info_valid_till": "2013-12-31"
+        },
+        "MB": {
+          "active": true,
+          "start_date": "2005-04-01",
+          "end_date": null,
+          "deductible": 147,
+          "deductible_remaining": 0,
+          "coinsurance_percent": 20,
+          "copayment": null,
+          "info_valid_till": "2013-12-31"
+        },
+        "MC": {
+          "active": true,
+          "payer_name": "ORGNAME",
+          "insurance_type": "IN",
+          "insurance_type_label": "Indemnity",
+          "mco_bill_option_code": "C",
+          "mco_bill_option_label": "MCO should process all claims",
+          "locked": true,
+          "policy_number": "H0000 999",
+          "effective_date": "2009-01-01",
+          "termination_date": null,
+          "contacts": [
+            {
+              "contact_type": "telephone",
+              "contact_value": "AAABBBCCCC"
+            },
+            {
+              "contact_type": "url",
+              "contact_value": "www.website.com"
+            }
+          ],
+          "address": {
+            "street_line_1": "ADDRESSLINE1",
+            "street_line_2": "ADDRESSLINE2",
+            "city": "CITY",
+            "state": "ST",
+            "zip": "ZIPCODE"
+          }
+        },
+        "MD": {
+          "active": true,
+          "payer_name": "ORGNAME",
+          "policy_number": "S0000 999",
+          "effective_date": "2012-01-01",
+          "termination_date": null,
+          "contacts": [
+            {
+              "contact_type": "telephone",
+              "contact_value": "AAABBBCCCC"
+            },
+            {
+              "contact_type": "url",
+              "contact_value": "www.website.com"
+            }
+          ],
+          "address": {
+            "street_line_1": "ADDRESSLINE1",
+            "street_line_2": "ADDRESSLINE2",
+            "city": "CITY",
+            "state": "ST",
+            "zip": "123456"
+          }
+        },
+        "PR": {
+          "active": true,
+          "payer_name": "ORGNAME",
+          "policy_number": "POLICYNUMBER",
+          "effective_date": "2011-06-01",
+          "termination_date": "2012-06-01",
+          "contacts": [
+            {
+              "contact_type": "telephone",
+              "contact_value": "AAABBBCCCC"
+            },
+            {
+              "contact_type": "url",
+              "contact_value": "www.website.com"
+            }
+          ],
+          "address": {
+            "street_line_1": "ADDRESSLINE1",
+            "street_line_2": "ADDRESSLINE2",
+            "city": "CITY",
+            "state": "ST",
+            "zip": "ZIPCODE"
+          }
+        }
+      },
+      "requested_service_types": [
+        {
+          "type": "30",
+          "type_label": "Health Benefit Plan Coverage",
+          "plan_type": "MA",
+          "active": true,
+          "start_date": "2005-04-01",
+          "end_date": null,
+          "deductible": 1184,
+          "deductible_remaining": 1184,
+          "coinsurance_percent": null,
+          "copayment": null,
+          "info_valid_till": "2013-12-31"
+        },
+        {
+          "type": "30",
+          "type_label": "Health Benefit Plan Coverage",
+          "plan_type": "MB",
+          "active": true,
+          "start_date": "2005-04-01",
+          "end_date": null,
+          "deductible": 147,
+          "deductible_remaining": 0,
+          "coinsurance_percent": 20,
+          "copayment": null,
+          "info_valid_till": "2013-12-31"
+        },
+        {
+          "type": "30",
+          "type_label": "Health Benefit Plan Coverage",
+          "plan_type": "MC",
+          "active": true,
+          "start_date": "2009-01-01",
+          "end_date": null,
+          "deductible": null,
+          "deductible_remaining": null,
+          "coinsurance_percent": null,
+          "copayment": null,
+          "info_valid_till": "2013-12-31"
+        },
+        {
+          "type": "30",
+          "type_label": "Health Benefit Plan Coverage",
+          "plan_type": "PR",
+          "active": true,
+          "start_date": "2011-06-01",
+          "end_date": "2012-06-01",
+          "deductible": null,
+          "deductible_remaining": null,
+          "coinsurance_percent": null,
+          "copayment": null,
+          "info_valid_till": "2013-12-31"
+        }
+      ],
+      "requested_procedure_codes": [
+        {
+          "procedure_code": "G0106",
+          "procedure_label": "Colorectal Cancer Screening (COLO)",
+          "plan_type": "MB",
+          "active": true,
+          "deductible": 0,
+          "deductible_remaining": null,
+          "coinsurance_percent": 20,
+          "copayment": null,
+          "info_valid_till": "2013-12-31",
+          "next_eligible_date": {
+            "professional": "2012-07-01",
+            "technical": "2012-06-01"
+          }
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Thu, 31 Dec 2015 07:38:19 GMT",
+      "content-type": "application/json",
+      "content-length": "6511",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]
