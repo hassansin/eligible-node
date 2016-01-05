@@ -8,7 +8,7 @@ var fs = require('fs-extra');
 
 var nock = require('nock');
 
-module.exports = function(name,rerecord) {
+module.exports = function(name, rerecord) {
   rerecord = Boolean(rerecord) || false;
 
   // Definition path

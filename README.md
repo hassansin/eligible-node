@@ -75,7 +75,7 @@ To make the Eligible as explorable as possible, accounts have test-mode as well 
 
 ### Payer
 
-```
+```js
 eligible.Payer.retrieve(62308)
 .then(function(payer){
   console.log(payer)

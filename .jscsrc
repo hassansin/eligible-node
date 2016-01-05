@@ -2,8 +2,11 @@
   "preset": "node-style-guide",
   "fileExtensions": [".js", "jscs"],
   "disallowMultipleVarDecl": false,
+  "requireLineFeedAtFileEnd": true,
+  "validateParameterSeparator": ", ",
   "excludeFiles": [
     "test/fixtures/**",
-    "node_modules/*"
+    "node_modules/**",
+    "coverage/**"
   ]
 }

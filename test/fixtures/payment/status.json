@@ -1,0 +1,188 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/payment/status.json?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 400,
+    "response": {
+      "created_at": "2016-01-05T05:21:27Z",
+      "eligible_id": "32BAWNCSYTIQU",
+      "error": {
+        "response_code": "Y",
+        "response_description": "Yes",
+        "agency_qualifier_code": "",
+        "agency_qualifier_description": null,
+        "reject_reason_code": "41",
+        "reject_reason_description": "Authorization/Access Restrictions",
+        "follow_up_action_code": "C",
+        "follow_up_action_description": "Please Correct and Resubmit",
+        "details": "NPI length should be 10 digits, please correct and resubmit."
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Tue, 05 Jan 2016 05:21:27 GMT",
+      "content-type": "application/json",
+      "content-length": "441",
+      "connection": "close",
+      "status": "400 Bad Request",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/payment/status.json?payer_id=00001&provider_last_name=Doe&provider_first_name=John&provider_npi=0123456789&member_id=ZZZ445554301&member_first_name=IDA&member_last_name=FRANKLIN&member_dob=1701-12-12&payer_control_number=123123123&charge_amount=125&start_date=2010-06-15&end_date=2010-06-15&trace_number=BHUYTOK98IK&api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "created_at": "1234-12-123",
+      "eligible_id": "31WIGBD4WSB88",
+      "payer": {
+        "name": "UNITEDHEALTHCARE",
+        "id": "87726",
+        "contacts": []
+      },
+      "service_provider": [
+        {
+          "first_name": "GWEN",
+          "last_name": "HAUSMAN",
+          "middle_name": "",
+          "npi": "1922160886"
+        }
+      ],
+      "patients": [
+        {
+          "first_name": "BENJAMIN",
+          "last_name": "SAXON",
+          "middle_name": "",
+          "id": "1234567890"
+        }
+      ],
+      "claims": [
+        {
+          "payer_control_number": "123123123",
+          "trace_number": null,
+          "bill_type": "20",
+          "account_number": "123123123",
+          "prescription_number": null,
+          "voucher_id": null,
+          "start_date": "2014-05-17",
+          "end_date": null,
+          "statuses": [
+            {
+              "paid": true,
+              "adjudication_status": "completed",
+              "codes": [
+                {
+                  "category_code": "F1",
+                  "category_label": "Finalized/Payment-The claim/line has been paid.",
+                  "status_code": "65",
+                  "status_label": "Claim/line has been paid.",
+                  "entity_code": null,
+                  "entity_label": null
+                }
+              ],
+              "effective_date": "2014-06-30",
+              "finalized_date": "2014-06-30",
+              "remittance_date": "2014-07-02",
+              "amount": {
+                "billed": 500,
+                "paid": 162.7
+              },
+              "trace_number": "PG43515500"
+            }
+          ],
+          "service_lines": [
+            {
+              "procedure_code": "92004",
+              "procedure_modifiers": [],
+              "procedure_qualifier_code": "HC",
+              "procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
+              "amount": {
+                "billed": 200,
+                "paid": 75.57
+              },
+              "quantity": "1",
+              "codes": [
+                {
+                  "category_code": "F1",
+                  "category_label": "Finalized/Payment-The claim/line has been paid.",
+                  "status_code": "107",
+                  "status_label": "Processed according to contract provisions (Contract refers to provisions that exist between the Health Plan and a Provider of Health Care Services)",
+                  "entity_code": null,
+                  "entity_label": null
+                }
+              ],
+              "control_number": "001",
+              "start_date": "2014-05-17",
+              "end_date": null,
+              "effective_date": "2014-07-02"
+            },
+            {
+              "procedure_code": "92025",
+              "procedure_modifiers": [],
+              "procedure_qualifier_code": "HC",
+              "procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
+              "amount": {
+                "billed": 150,
+                "paid": 28.25
+              },
+              "quantity": "1",
+              "codes": [
+                {
+                  "category_code": "F1",
+                  "category_label": "Finalized/Payment-The claim/line has been paid.",
+                  "status_code": "107",
+                  "status_label": "Processed according to contract provisions (Contract refers to provisions that exist between the Health Plan and a Provider of Health Care Services)",
+                  "entity_code": null,
+                  "entity_label": null
+                }
+              ],
+              "control_number": "002",
+              "start_date": "2014-05-17",
+              "end_date": null,
+              "effective_date": "2014-07-02"
+            },
+            {
+              "procedure_code": "92250",
+              "procedure_modifiers": [],
+              "procedure_qualifier_code": "HC",
+              "procedure_qualifier_label": "Health Care Financing Administration Common Procedural Coding System (HCPCS) Codes. HCFA coding scheme to group procedure(s) performed on an outpatient basis for payment to hospital under Medicare; primarily used for ambulatory surgical and other diagnostic departments",
+              "amount": {
+                "billed": 150,
+                "paid": 58.88
+              },
+              "quantity": "1",
+              "codes": [
+                {
+                  "category_code": "F1",
+                  "category_label": "Finalized/Payment-The claim/line has been paid.",
+                  "status_code": "107",
+                  "status_label": "Processed according to contract provisions (Contract refers to provisions that exist between the Health Plan and a Provider of Health Care Services)",
+                  "entity_code": null,
+                  "entity_label": null
+                }
+              ],
+              "control_number": "003",
+              "start_date": "2014-05-17",
+              "end_date": null,
+              "effective_date": "2014-07-02"
+            }
+          ]
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Tue, 05 Jan 2016 05:21:28 GMT",
+      "content-type": "application/json",
+      "content-length": "6275",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]
