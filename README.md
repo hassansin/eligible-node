@@ -17,8 +17,11 @@ You can request an account at https://eligible.com/request-access
       * [Retrieve Coverage](#retrieve-coverage)
       * [Retrieve Medicare](#retrieve-medicare)
       * [Retrieve Cost Estimates](#retrieve-cost-estimates)
+    * [Payment](#payment)
+      * [Payment Status](#payment-status)    
   * [Errors](#errors)
   * [Testing](#testing)
+  * [Developing](#developing)
 
 
 ## Documentation
@@ -149,6 +152,34 @@ eligible.Coverage.costEstimates({
 });
 ```
 
+### Payment
+
+#### Payment Status
+
+```js
+eligible.Payment.status({
+  payer_id: '00001',
+  provider_last_name: 'Doe',
+  provider_first_name: 'John',
+  provider_npi: '0123456789',
+  member_id: 'ZZZ445554301',
+  member_first_name: 'IDA',
+  member_last_name: 'FRANKLIN',
+  member_dob: '1701-12-12',
+  payer_control_number: 123123123,
+  charge_amount: 125.00,
+  start_date: '2010-06-15',
+  end_date: '2010-06-15',
+  trace_number: 'BHUYTOK98IK',
+})
+.then(function(payment) {
+  console.log(payment)
+})
+.catch(function(e) {
+  
+});
+```
+
 ## Errors
 
 The library throws following error objects.
@@ -185,3 +216,13 @@ Note that, by default running above commands will mock HTTP requests using [nock
 `NOCK_OFF=true npm test`
 
 To filter tests, update `grep` field in `test/mocha.opts`.
+
+## Developing
+
+To work on the library:
+
+1. Clone the repo.
+2. Install dependencies: `npm install`
+3. Fix bugs or add features. Make sure the changes pass the coding guidelines by runing: `npm run lint` or `npm run watch`
+4. Write tests. For HTTP mocking [`nock`](https://github.com/pgte/nock) library is used. Nock definitions are saved in `test/fixtures` directory
+5. Run test by `npm test` or `npm run test-coverage`

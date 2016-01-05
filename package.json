@@ -13,7 +13,9 @@
   },
   "scripts": {
     "test": "mocha",
-    "test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha"
+    "test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "lint": "gulp jshint && gulp jscs",
+    "watch": "gulp watch"
   },
   "engines": {
     "node": ">=0.8.0"
