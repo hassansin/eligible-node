@@ -18,7 +18,14 @@ You can request an account at https://eligible.com/request-access
       * [Retrieve Medicare](#retrieve-medicare)
       * [Retrieve Cost Estimates](#retrieve-cost-estimates)
     * [Payment](#payment)
-      * [Payment Status](#payment-status)    
+      * [Payment Status](#payment-status)
+    * [Claim](#claim)
+      * [Create a Claim](#create-a-claim)
+      * [Retrieve Single Claim Acknowledgements](#retrieve-single-claim-acknowledgements)
+      * [Retrieve Multiple Claims Acknowledgements](#retrieve-multiple-claims-acknowledgements)
+      * [Retrieve Single Claim Payment Report](#retrieve-single-claim-payment-report)
+      * [Retrieve Specific Claim Payment Report](#retrieve-specific-claim-payment-report)
+      * [Retrieve Multiple Claim Payment Report](#retrieve-multiple-claim-payment-report)
   * [Errors](#errors)
   * [Testing](#testing)
   * [Developing](#developing)
@@ -56,7 +63,7 @@ var Eligible = require('eligible-node');
 
 // Get values from environment variables if nothing is passed in arguments
 // available env variables: ELIGIBLE_API_KEY, ELIGIBLE_IS_TEST
-var eligible = Eligible(); 
+var eligible = Eligible();
 
 //or, pass them as object:
 var eligible = Eligible({
@@ -68,13 +75,13 @@ var eligible = Eligible({
 var config = new Eligible.Config;
 config->setApiKey('foobar')
 config->setTest(true);
-var eligible = Eligible(config); 
+var eligible = Eligible(config);
 
 ```
 
 ### Test Mode
 
-To make the Eligible as explorable as possible, accounts have test-mode as well as live-mode. See above example to enable test mode on any of your requests and hit the sandbox. 
+To make the Eligible as explorable as possible, accounts have test-mode as well as live-mode. See above example to enable test mode on any of your requests and hit the sandbox.
 
 ### Payer
 
@@ -176,9 +183,98 @@ eligible.Payment.status({
   console.log(payment)
 })
 .catch(function(e) {
-  
+
 });
 ```
+
+### Claim
+
+#### Create a Claim
+
+```js
+eligible.Claim.create(params)
+  .then(function(claim) { // returns a claim instance
+    console.log(claim);
+    return claim.acknowledgements(); // get acknowledgements for this claim
+  })
+  .then(function(acknowledgements){
+    console.log(acknowledgements);
+  })
+  .catch(function(e){
+    //
+  });
+```
+
+#### Retrieve Single Claim Acknowledgements
+
+```js
+eligible.Claim.getAcknowledgements('12121212')
+  .then(function(data) {
+    console.log(data);
+  })
+```
+
+or, using `claim` instance either created manually or returned by `Claim.create()` method
+
+```js
+var claim = new eligible.Claim({'reference_id': '12121212'});
+claim.acknowledgements()
+  .then(function(data) {
+    console.log(data);
+  })
+```
+
+#### Retrieve Multiple Claims Acknowledgements
+
+```js
+eligible.Claim.queryAcknowledgements(query)
+  .then(function(data) {
+  })
+```
+
+#### Retrieve Single Claim Payment Report
+
+```js
+eligible.Claim.getPaymentReport('BDA85HY09IJ')
+	.then(function(payment) {
+	})
+```
+
+or, using `claim` instance either created manually or returned by `Claim.create()` method
+
+```js
+var claim = new eligible.Claim({'reference_id': 'BDA85HY09IJ'});
+claim.paymentReports()
+  .then(function(payment_report) {
+    console.log(payment_report);
+  })
+```
+
+#### Retrieve Specific Claim Payment Report
+
+```js
+eligible.Claim.getPaymentReport('BDA85HY09IJ', 'ABX45DGER44')
+	.then(function(payment) {
+	})
+```
+or, using `claim` instance either created manually or returned by `Claim.create()` method
+
+```js
+var claim = new eligible.Claim({'reference_id': 'BDA85HY09IJ'});
+claim.paymentReports('ABX45DGER44')
+  .then(function(payment_report) {
+    console.log(payment_report);
+  })
+```
+
+#### Retrieve Multiple Claim Payment Report
+
+```js
+eligible.Claim.queryPaymentReports(query)
+	.then(function(data) {
+	})
+```
+
 
 ## Errors
 

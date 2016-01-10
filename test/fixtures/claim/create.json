@@ -10,7 +10,7 @@
     "status": 400,
     "response": {
       "success": false,
-      "created_at": "2016-01-07T23:13:10Z",
+      "created_at": "2016-01-10T06:38:19Z",
       "errors": [
         {
           "code": "billing_provider_required",
@@ -40,7 +40,7 @@
     },
     "headers": {
       "server": "nginx/1.8.0",
-      "date": "Thu, 07 Jan 2016 23:13:10 GMT",
+      "date": "Sun, 10 Jan 2016 06:38:19 GMT",
       "content-type": "application/json",
       "content-length": "500",
       "connection": "close",
@@ -144,66 +144,14 @@
     "status": 200,
     "response": {
       "success": "true",
-      "created_at": "2016-01-07T23:13:11Z",
+      "created_at": "2016-01-10T06:38:20Z",
       "reference_id": "12121212"
     },
     "headers": {
       "server": "nginx/1.8.0",
-      "date": "Thu, 07 Jan 2016 23:13:11 GMT",
+      "date": "Sun, 10 Jan 2016 06:38:20 GMT",
       "content-type": "application/json",
       "content-length": "80",
-      "connection": "close",
-      "status": "200 OK",
-      "access-control-allow-origin": "*",
-      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
-    }
-  },
-  {
-    "scope": "https://gds.eligibleapi.com:443",
-    "method": "GET",
-    "path": "/v1.5/claims/12121212/acknowledgements?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
-    "body": "",
-    "status": 200,
-    "response": {
-      "acknowledgements": [
-        {
-          "effective_date": "2014-11-18",
-          "status": "accepted",
-          "message": "",
-          "errors": []
-        },
-        {
-          "effective_date": "2014-11-18",
-          "status": "received",
-          "message": "Accepted for processing.",
-          "errors": []
-        },
-        {
-          "effective_date": "2014-11-18",
-          "status": "submitted",
-          "message": "Submitted to Payer for processing",
-          "errors": []
-        },
-        {
-          "effective_date": "2014-11-18",
-          "status": "created",
-          "message": null,
-          "errors": []
-        }
-      ],
-      "payer_control_number": "6514322781123",
-      "reference_id": "AZNG1V8QFUF0",
-      "status": "accepted",
-      "page": 1,
-      "per_page": 30,
-      "num_of_pages": 1,
-      "total": 3
-    },
-    "headers": {
-      "server": "nginx/1.8.0",
-      "date": "Thu, 07 Jan 2016 23:13:11 GMT",
-      "content-type": "application/json",
-      "content-length": "879",
       "connection": "close",
       "status": "200 OK",
       "access-control-allow-origin": "*",

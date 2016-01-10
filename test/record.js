@@ -6,10 +6,8 @@ var nock = require('nock');
 var path = require('path');
 var fs = require('fs-extra');
 
-var nock = require('nock');
-
 module.exports = function(name, rerecord) {
-  rerecord = Boolean(rerecord) || false;
+  rerecord = Boolean(rerecord);
 
   // Definition path
   var fixturePath = path.join(__dirname, 'fixtures',name + '.json');
@@ -28,6 +26,7 @@ module.exports = function(name, rerecord) {
         });
       } else {
         // Definitions found, load them
+
         hasFixture = true;
         nock.load(fixturePath);
       }
@@ -39,9 +38,9 @@ module.exports = function(name, rerecord) {
     if (hasFixture) {
       return done();
     }
-
     // Suite finished, save the recorded definitions
     var fixtures = nock.recorder.play();
+    nock.restore();
     fs.ensureFile(fixturePath, function(err) {
       if (err) {
         done(err);
