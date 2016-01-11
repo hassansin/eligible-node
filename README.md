@@ -50,7 +50,7 @@ var eligible = Eligible({
 //or, pass Config object
 var config = new Eligible.Config;
 config->setApiKey('foobar')
-config->testMode(true);
+config->setTest(true);
 var eligible = Eligible(config); 
 
 ```
@@ -90,6 +90,6 @@ Testing
 ```js
 
 npm test
-npm test-coverage
+npm run test-coverage
 
 ```

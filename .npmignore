@@ -1,4 +1,4 @@
 test/**
 gulpfile.js
 .jshintrc
-coverage
+./coverage/
