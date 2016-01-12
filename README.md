@@ -55,7 +55,7 @@ npm install eligible-node --save
 
 ### Create instance
 
-First create an `Eligible` object by passing the your api key. You can pass the api key directly or as an object. You may also pass environment variables to load your api key.
+First create an `Eligible` object by passing your api key. You can pass the api key directly or as an object. You may also load your api key from environment variables.
 
 ```js
 
