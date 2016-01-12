@@ -43,6 +43,29 @@ describe('Claim', function() {
           .catch(done);
       });
 
+    it('should throw InvalidRequestError when invalid service_lines is passed',
+      function(done) {
+        Claim.create(
+          require('./fixtures/claim/claim-invalid-service-lines.json')
+        )
+        .then(function() {
+          // Success, where we were expecting an error - test should fail
+          done(new Error('Expecting InvalidRequestError, got 200'));
+        })
+        .catch(function(e) {
+          expect(e).to.be.an.instanceOf(errors.InvalidRequestError);
+          expect(e.code).to.eql(400);
+          expect(e.response)
+            .to.have
+            .deep.property('errors[0].code', 'claim_service_lines');
+          expect(e.response)
+              .to.have
+              .deep.property('errors[0].param', 'claim[service_lines]');
+          done();
+        })
+        .catch(done);
+      });
+
     it('should create new claim', function(done) {
       Claim.create(require('./fixtures/claim/claim.json'))
         .then(function(claim) {

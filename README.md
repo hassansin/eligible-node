@@ -281,7 +281,7 @@ eligible.Claim.queryPaymentReports(query)
 The library throws following error objects.
 
 - Eligible.APIConnectionError
-- Eligible.APIErrorResponseError
+- Eligible.APIResponseError
 - Eligible.APIError
 - Eligible.AuthenticationError
 - Eligible.InvalidRequestError

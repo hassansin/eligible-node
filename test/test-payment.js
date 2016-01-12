@@ -62,6 +62,8 @@ describe('Payment', function() {
       })
       .then(function(payment) {
         expect(payment).to.be.an.instanceOf(Payment);
+        expect(payment).to.have.deep.property('payer.id');
+        expect(payment).to.have.deep.property('claims[0].statuses[0].paid');
         done();
       })
       .catch(done);
