@@ -8,7 +8,9 @@ var fs = require('fs-extra');
 
 var nock = require('nock');
 
-module.exports = function(name) {
+module.exports = function(name,rerecord) {
+  rerecord = Boolean(rerecord) || false;
+
   // Definition path
   var fixturePath = path.join(__dirname, 'fixtures',name + '.json');
   var hasFixture;
@@ -16,7 +18,7 @@ module.exports = function(name) {
   before(function(done) {
     // Check if definition exists and readable
     fs.access(fixturePath, fs.R_OK | fs.R_OK, function(err) {
-      if (err) {
+      if (err || rerecord) {
         // Not found, start recording
         // jshint camelcase: false
         // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
