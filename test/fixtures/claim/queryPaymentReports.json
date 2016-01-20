@@ -1,0 +1,284 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/claims/payment_reports?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "reports": [
+        {
+          "effective_date": "2014-05-08",
+          "payer": {
+            "name": "NATIONAL GOVERNMENT SERVICES #06014",
+            "id": "12M64",
+            "address": {
+              "street_line_1": "P.O.BOX 7064",
+              "street_line_2": null,
+              "city": "INDIANAPOLIS",
+              "state": "IN",
+              "zip": "462077064"
+            },
+            "contacts": [
+              {
+                "department_code": "CX",
+                "department_label": "Payers Claim Office. Location responsible for paying bills related to medical care received",
+                "name": "NATIONAL GOVERNMENT SERVICES, INC. 06014",
+                "details": [
+                  {
+                    "type_code": "TE",
+                    "type_label": "Telephone",
+                    "value": "8665906724"
+                  },
+                  {
+                    "type_code": "FX",
+                    "type_label": "Facsimile",
+                    "value": "3154424259"
+                  }
+                ]
+              },
+              {
+                "department_code": "BL",
+                "department_label": "Technical Department",
+                "name": "EDI HELP DESK",
+                "details": [
+                  {
+                    "type_code": "EM",
+                    "type_label": "Electronic Mail",
+                    "value": "NGS_EDI_PARTA@WELLPOINT.COM"
+                  },
+                  {
+                    "type_code": "TE",
+                    "type_label": "Telephone",
+                    "value": "8772734334"
+                  },
+                  {
+                    "type_code": "EX",
+                    "type_label": "Telephone Extension",
+                    "value": "5024232356"
+                  }
+                ]
+              }
+            ],
+            "crossover_payer": {
+              "name": "",
+              "id": ""
+            },
+            "corrected_priority_payer": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "financials": {
+            "type_code": "I",
+            "type_label": "Remittance Information Only",
+            "total_payment_amount": "1320.72",
+            "credit": true,
+            "debit": false,
+            "payment_method_code": "ACH",
+            "payment_method_label": "Automated Clearing House (ACH)",
+            "payment_format_code": "CCP",
+            "payment_format_label": "Cash Concentration/Disbursement plus Addenda (CCD+) (ACH)",
+            "payment_date": "2013-05-09",
+            "payment_trace_number": "EFT123456",
+            "sender": {
+              "dfi_id_qualifier": "01",
+              "dfi_id_qualifier_label": "ABA Transit Routing Number Including Check Digits (9 digits)",
+              "dfi_id": "12345678",
+              "account_number": "00000123456789",
+              "id": "1234567890",
+              "supplemental_code": ""
+            },
+            "receiver": {
+              "dfi_id_qualifier": "01",
+              "dfi_id_qualifier_label": "ABA Transit Routing Number Including Check Digits (9 digits)",
+              "dfi_id": "1234567890",
+              "account_type": "Demand Deposit",
+              "account_number": "1234567890"
+            }
+          },
+          "payee": {
+            "name": "ELIGIBLE INC.",
+            "npi": "1234567890",
+            "address": {
+              "street_line_1": "1842 Union Street",
+              "street_line_2": null,
+              "city": "SAN FRANCISCO",
+              "state": "CA",
+              "zip": "94123"
+            },
+            "additional_ids": [
+              {
+                "type_code": "TJ",
+                "type_label": "Federal Taxpayer's Identification Number",
+                "value": "1234567890"
+              }
+            ]
+          },
+          "patient": {
+            "first_name": "BENJAMIN",
+            "last_name": "FRANKLIN",
+            "middle_name": "",
+            "id": "123456789"
+          },
+          "service_provider": {
+            "first_name": "",
+            "last_name": "",
+            "middle_name": "",
+            "npi": ""
+          },
+          "claim": {
+            "control_number": "1234578CDR",
+            "received_date": "2013-05-05",
+            "expiration_date": "2014-06-09",
+            "filing_indicator_type": "MA",
+            "filing_indicator_label": "Medicare Part A",
+            "place_of_service": "32",
+            "frequency": "2",
+            "responsibility_sequence": "primary",
+            "status": [
+              "processed"
+            ],
+            "drg_code": "",
+            "drg_quantity": "",
+            "amount": {
+              "billed": 70,
+              "paid": 70,
+              "patient_responsibility": 0,
+              "total_coverage": null,
+              "prompt_payment_discount": null,
+              "per_day_limit": null,
+              "patient_paid": null,
+              "revised_intrest": null,
+              "negetive_ladger_balance": null,
+              "tax": null,
+              "total_claim_before_taxes": null,
+              "federal": {
+                "category_1": null,
+                "category_2": null,
+                "category_3": null,
+                "category_4": null,
+                "category_5": null
+              }
+            },
+            "adjustments": [],
+            "quantity": {
+              "actual": {
+                "covered": null,
+                "co_insured": null,
+                "life_time_reserve": null
+              },
+              "estimated": {
+                "life_time_reserve": null,
+                "non_covered": null
+              },
+              "not_replaced_blood_unit": 5,
+              "outlier_days": 14,
+              "prescription": null,
+              "visits": null,
+              "federal": {
+                "category_1": null,
+                "category_2": null,
+                "category_3": null,
+                "category_4": null,
+                "category_5": null
+              }
+            },
+            "rendering_provider_ids": [
+              {
+                "id_type": "1C",
+                "id_type_label": "Medicare Provider Number",
+                "id": "12345678"
+              },
+              {
+                "id_type": "1D",
+                "id_type_label": "Medicaid Provider Number",
+                "id": "12345678"
+              }
+            ],
+            "moa_codes": [
+              "MA01",
+              "MA27",
+              "MA07"
+            ],
+            "allowed_amount": 111.12,
+            "service_lines": [
+              {
+                "procedure_qualifier": "HC",
+                "procedure_code": "12345",
+                "procedure_modifiers": [],
+                "revenue_code": "0023",
+                "service_start": "2013-03-19",
+                "service_end": "2013-03-19",
+                "amount": {
+                  "billed": 70,
+                  "paid": 70,
+                  "total_coverage": null,
+                  "deduction": null,
+                  "tax": null,
+                  "total_claim_before_taxes": null,
+                  "federal": {
+                    "category_1": null,
+                    "category_2": null,
+                    "category_3": null,
+                    "category_4": null,
+                    "category_5": null
+                  }
+                },
+                "quantity": {
+                  "billed": 0,
+                  "paid": 1,
+                  "federal": {
+                    "category_1": null,
+                    "category_2": null,
+                    "category_3": null,
+                    "category_4": null,
+                    "category_5": null
+                  }
+                },
+                "rendering_provider_ids": [
+                  {
+                    "id_type": "1C",
+                    "id_type_label": "Medicare Provider Number",
+                    "id": "12345678"
+                  },
+                  {
+                    "id_type": "1D",
+                    "id_type_label": "Medicaid Provider Number",
+                    "id": "12345678"
+                  }
+                ],
+                "allowed_amount": 111.12,
+                "adjustments": [
+                  {
+                    "type_code": "CO",
+                    "type_label": "Contractual Obligations",
+                    "reason_code": "97",
+                    "reason_label": "The benefit for this service is included in the payment/allowance for another service/procedure that has already been adjudicated. Note: Refer to the 835 Healthcare Policy Identification Segment (loop 2110 Service Payment Information REF), if present.",
+                    "amount": -1320.72,
+                    "quantity": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "reference_id": "BDA85HY09IJ"
+        }
+      ],
+      "page": 1,
+      "per_page": 30,
+      "num_of_pages": 1,
+      "total": 1
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 10 Jan 2016 07:57:26 GMT",
+      "content-type": "application/json",
+      "content-length": "10801",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

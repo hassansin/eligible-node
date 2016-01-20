@@ -1,0 +1,568 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "POST",
+    "path": "/v1.5/claims",
+    "body": {
+      "api_key": "n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn",
+      "test": "true"
+    },
+    "status": 400,
+    "response": {
+      "success": false,
+      "created_at": "2016-01-10T06:38:19Z",
+      "errors": [
+        {
+          "code": "billing_provider_required",
+          "param": "billing_provider",
+          "message": "The billing provider is required",
+          "expected_value": null
+        },
+        {
+          "code": "payer_required",
+          "param": "payer",
+          "message": "Payer is required",
+          "expected_value": null
+        },
+        {
+          "code": "subscriber_required",
+          "param": "subscriber",
+          "message": "The subscriber is required",
+          "expected_value": null
+        },
+        {
+          "code": "claim_required",
+          "param": "claim",
+          "message": "The claim is required",
+          "expected_value": null
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 10 Jan 2016 06:38:19 GMT",
+      "content-type": "application/json",
+      "content-length": "500",
+      "connection": "close",
+      "status": "400 Bad Request",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "POST",
+    "path": "/v1.5/claims",
+    "body": {
+      "billing_provider": {
+        "tax_id": "27-4070722",
+        "tax_id_type": "EI",
+        "entity": "false",
+        "phone_number": "123-123-1234",
+        "organization_name": "Provider Organization",
+        "last_name": "Franklin",
+        "first_name": "Benjamin",
+        "middle_name": "",
+        "address": {
+          "street_line_1": "1842 Union Street",
+          "street_line_2": "",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "941231232"
+        },
+        "npi": "1234567893",
+        "taxonomy_code": "101YM0800X"
+      },
+      "payer": {
+        "id": "60054",
+        "name": "Aetna",
+        "address": {
+          "street_line_1": "603 3rd Ave Van",
+          "street_line_2": "",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "941231232"
+        }
+      },
+      "subscriber": {
+        "id": "1234567890",
+        "first_name": "Benjamin",
+        "last_name": "Franklin",
+        "middle_name": "",
+        "address": {
+          "street_line_1": "123 NW St",
+          "street_line_2": "",
+          "city": "Seattle",
+          "state": "WA",
+          "zip": "981171232"
+        },
+        "phone_number": "9129129121",
+        "group_id": "100012345",
+        "dob": "1974-02-06",
+        "gender": "M",
+        "group_name": ""
+      },
+      "claim": {
+        "patient_signature_on_file": "Y",
+        "direct_payment_authorized": "Y",
+        "frequency": "1",
+        "prior_authorization_number": "1234567890",
+        "accept_assignment_code": "C",
+        "total_charge": "118.05",
+        "patient_amount_paid": "0",
+        "provider_signature_on_file": "Y",
+        "diagnosis_codes": [
+          "309.24",
+          "309.0"
+        ],
+        "service_lines": [
+          {
+            "service_date_from": "2014-05-07",
+            "service_date_to": "2014-05-07",
+            "place_of_service": "11",
+            "procedure_code": "90837",
+            "procedure_modifiers": [
+              "UN"
+            ],
+            "diagnosis_code_pointers": [
+              "1"
+            ],
+            "charge_amount": "118.05",
+            "units": "1",
+            "rendering_provider": {
+              "entity": "",
+              "organization_name": "",
+              "last_name": "Franklin",
+              "first_name": "John",
+              "npi": "1234567893"
+            }
+          }
+        ]
+      },
+      "api_key": "n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn",
+      "test": "true"
+    },
+    "status": 200,
+    "response": {
+      "success": "true",
+      "created_at": "2016-01-10T06:38:20Z",
+      "reference_id": "12121212"
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 10 Jan 2016 06:38:20 GMT",
+      "content-type": "application/json",
+      "content-length": "80",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/claims/12121212/acknowledgements?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "acknowledgements": [
+        {
+          "effective_date": "2014-11-18",
+          "status": "accepted",
+          "message": "",
+          "errors": []
+        },
+        {
+          "effective_date": "2014-11-18",
+          "status": "received",
+          "message": "Accepted for processing.",
+          "errors": []
+        },
+        {
+          "effective_date": "2014-11-18",
+          "status": "submitted",
+          "message": "Submitted to Payer for processing",
+          "errors": []
+        },
+        {
+          "effective_date": "2014-11-18",
+          "status": "created",
+          "message": null,
+          "errors": []
+        }
+      ],
+      "payer_control_number": "6514322781123",
+      "reference_id": "AZNG1V8QFUF0",
+      "status": "accepted",
+      "page": 1,
+      "per_page": 30,
+      "num_of_pages": 1,
+      "total": 3
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 10 Jan 2016 06:38:21 GMT",
+      "content-type": "application/json",
+      "content-length": "879",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/claims/acknowledgements?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "acknowledgements": [
+        {
+          "reference_id": "8HAB9VVS963YCP",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-09",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "31WIGIOEIE9KO",
+          "submission_status": "received",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A1",
+            "category_label": "Acknowledgement/Receipt-The claim/encounter has been received. This does not mean that the claim has been accepted for adjudication.",
+            "status_code": "16",
+            "status_label": "Claim/encounter has been forwarded to entity. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "8HAB9VVSCWO2W6",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-11",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S1H2PR2",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-11",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "31WIGIOEKH1X9",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-11",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S1VDGWU",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-11",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S21SLHJ",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-12",
+          "codes": {
+            "category_code": "A3",
+            "category_label": "Acknowledgement/Returned as unprocessable claim-The claim/encounter has been rejected and has not been entered into the adjudication system.",
+            "status_code": "54",
+            "status_label": "Duplicate of a previously processed claim/line."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S28ROAS",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-11",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "54",
+            "status_label": "Duplicate of a previously processed claim/line."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S2FUOOB",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-12",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S2MVKNI",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-12",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "8HAB9VVSSGDUBB",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-12",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S31XQIT",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-12",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S39OE4F",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "153",
+            "status_label": "Entity's id number. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "8HAB9VVSYRT1B2",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "153",
+            "status_label": "Entity's id number. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "31WIGIOERPDB7",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "153",
+            "status_label": "Entity's id number. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S3WQ4WT",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "153",
+            "status_label": "Entity's id number. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S44EKKK",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "153",
+            "status_label": "Entity's id number. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S4C0O2X",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "153",
+            "status_label": "Entity's id number. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S4JXRW7",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "153",
+            "status_label": "Entity's id number. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "AZNG1V8ORDSA",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "54",
+            "status_label": "Duplicate of a previously processed claim/line."
+          }
+        },
+        {
+          "reference_id": "31WIGIOEWFR0D",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "54",
+            "status_label": "Duplicate of a previously processed claim/line."
+          }
+        },
+        {
+          "reference_id": "AZNG1V8OXDJU",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-06",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "8HAB9VVTIP6ECS",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-06",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "8HAB9VVTL5Y5IA",
+          "submission_status": "received",
+          "effective_date": "2013-06-06",
+          "codes": {
+            "category_code": "A1",
+            "category_label": "Acknowledgement/Receipt-The claim/encounter has been received. This does not mean that the claim has been accepted for adjudication.",
+            "status_code": "19",
+            "status_label": "Entity acknowledges receipt of claim/encounter. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S5YHBGM",
+          "submission_status": "received",
+          "effective_date": "2013-06-06",
+          "codes": {
+            "category_code": "A1",
+            "category_label": "Acknowledgement/Receipt-The claim/encounter has been received. This does not mean that the claim has been accepted for adjudication.",
+            "status_code": "19",
+            "status_label": "Entity acknowledges receipt of claim/encounter. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "31WIGIOF0R5J1",
+          "submission_status": "rejected",
+          "effective_date": "2013-06-06",
+          "codes": {
+            "category_code": "A7",
+            "category_label": "Acknowledgement/Rejected for Invalid Information - The claim/encounter has invalid information as specified in the Status details and has been rejected.",
+            "status_code": "153",
+            "status_label": "Entity's id number. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "reference_id": "8HAB9VVTSM870P",
+          "submission_status": "accepted",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          }
+        },
+        {
+          "reference_id": "UJ14L6S6PVBVZ",
+          "submission_status": "received",
+          "effective_date": "2013-06-07",
+          "codes": {
+            "category_code": "A1",
+            "category_label": "Acknowledgement/Receipt-The claim/encounter has been received. This does not mean that the claim has been accepted for adjudication.",
+            "status_code": "19",
+            "status_label": "Entity acknowledges receipt of claim/encounter. Note: This code requires use of an Entity Code."
+          }
+        },
+        {
+          "submission_status": "created",
+          "effective_date": "2013-06-22",
+          "codes": {
+            "category_code": "",
+            "category_label": "",
+            "status_code": "",
+            "status_label": ""
+          },
+          "reference_id": "137187284971512427560"
+        },
+        {
+          "submission_status": "accepted",
+          "effective_date": "2013-06-22",
+          "codes": {
+            "category_code": "A2",
+            "category_label": "Acknowledgement/Acceptance into adjudication system-The claim/encounter has been accepted into the adjudication system.",
+            "status_code": "20",
+            "status_label": "Accepted for processing."
+          },
+          "reference_id": "137187284971512427560"
+        }
+      ],
+      "page": 1,
+      "per_page": 30,
+      "num_of_pages": 2,
+      "total": 35
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 10 Jan 2016 06:38:22 GMT",
+      "content-type": "application/json",
+      "content-length": "15665",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

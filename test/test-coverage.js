@@ -96,6 +96,7 @@ describe('Coverage', function() {
       })
       .then(function(medicare) {
         expect(medicare).to.be.an.instanceOf(Coverage.Medicare);
+        expect(medicare).to.have.deep.property('plan_types.MA');
         done();
       })
       .catch(done);
@@ -136,6 +137,8 @@ describe('Coverage', function() {
       })
       .then(function(costEstimates) {
         expect(costEstimates).to.be.an.instanceOf(Coverage.CostEstimates);
+        expect(costEstimates).to.have
+          .deep.property('cost_estimates[0].cost_estimate');
         done();
       })
       .catch(done);

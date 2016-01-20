@@ -112,7 +112,7 @@ describe('Client', function() {
     });
 
 
-  it('should throw APIErrorResponseError when response is not JSON parsable',
+  it('should throw APIResponseError when response is not JSON parsable',
     function(done) {
 
       nock(host)
@@ -122,7 +122,7 @@ describe('Client', function() {
 
       client('get', 'foo', null, config)
         .catch(function(e) {
-          expect(e).to.be.an.instanceOf(errors.APIErrorResponseError);
+          expect(e).to.be.an.instanceOf(errors.APIResponseError);
           expect(e.response).to.eql('OK');
           done();
         })
