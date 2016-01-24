@@ -12,7 +12,7 @@ You can request an account at https://eligible.com/request-access
   * [Usage](#usage)
     * [Create instance](#create-instance)
     * [Test Mode](#test-mode)
-    * [Payer](#payer)
+    * [Example](#example)
     * [Coverage](#coverage)
       * [Retrieve Coverage](#retrieve-coverage)
       * [Retrieve Medicare](#retrieve-medicare)
@@ -88,25 +88,42 @@ var eligible = Eligible(config);
 
 To make the Eligible as explorable as possible, accounts have test-mode as well as live-mode. See above example to enable test mode on any of your requests and hit the sandbox.
 
-### Payer
+### Example
+
+Complete example on how to use the library:
 
 ```js
-eligible.Payer.retrieve(62308)
-.then(function(payer){
-  console.log(payer)
-})
-.catch(Eligible.APIConnectionError, function(e){
-  console.log('Connection Error');
-})
-.catch(Eligible.AuthenticationError, function(e){
-    console.log('Authentication Error', e.message, e.code, e.response);
-})
-.catch(function(e){
-  console.log(e);
+
+var Eligible = require('eligible-node');
+var eligible = Eligible({
+    apiKey: 'n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn',
+    isTest: true
 });
 
-```
+// Retrieve a payer and it's search options
 
+eligible.Payer.retrieve('62308')
+  .then(function(payer){
+    console.log(payer.payer_id);
+    return payer.searchOptions(); //retrieve search options
+  })
+  .then(function(searchOptions){
+    console.log(searchOptions)
+  })
+  .catch(Eligible.APIConnectionError, function(e){
+    console.log('Connection Error');
+  })
+  .catch(Eligible.AuthenticationError, function(e){
+      console.log('Authentication Error', e.message, e.code, e.response);
+  })
+  .catch(Eligible.InvalidRequestError, function(e){
+      console.log('InvalidRequestError', e.message, e.code, e.response);
+  })
+  .catch(function(e){
+    console.log(e);
+  });
+```
+See [Errors](#errors) for a list of Error types.
 
 ### Coverage
 
