@@ -31,6 +31,11 @@ You can request an account at https://eligible.com/request-access
       * [View a Payer](#view-a-payer)
       * [Search Options](#search-options)
       * [Search Options of a Payer](#search-options-of-a-payer)
+    * [Customer](#customer)
+      * [Create a Customer](#create-a-customer)
+      * [Update a Customer](#update-a-customer)
+      * [View a Customer](#view-a-customer)
+      * [List Customers](#list-customers)
   * [Errors](#errors)
   * [Testing](#testing)
   * [Developing](#developing)
@@ -352,6 +357,57 @@ payer.searchOptions()
   })
 ```
 
+### Customer
+
+#### Create a Customer
+
+```js
+eligible.Customer.create({
+    customer: {
+      name: 'ABC company',
+    },
+  })
+  .then(function(customer) {
+    console.log(customer.id);
+  })
+  .catch();
+```
+
+#### Update a Customer
+
+```js
+eligible.Customer.update('TN344YY67HH09KK', {
+    customer: {
+      name: 'XYZ company',
+    },
+  })
+  .then(function(customer) {
+    console.log(customer.id);
+  })
+  .catch(done);
+```
+
+#### View a Customer
+
+```js
+eligible.Customer.get('TN344YY67HH09KK')
+  .then(function(customer) {
+    console.log(customer.id);
+  })
+  .catch();
+```
+
+#### List Customers
+
+```js
+eligible.Customer.all({
+    page: 1,
+  })
+  .then(function(data) {
+    console.log(data.customers);
+  })
+  .catch();
+```
 ## Errors
 
 The library throws following error objects.
