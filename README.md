@@ -40,6 +40,9 @@ You can request an account at https://eligible.com/request-access
     * [Referral](#referral)
       * [Referral Inquiry](#referral-inquiry)
       * [Create A Referral](#create-a-referral)
+    * [Precertification](#precertification)
+      * [Precertification Inquiry](#precertification-inquiry)
+      * [Create A Precertification](#create-a-precertification)
   * [Errors](#errors)
   * [Testing](#testing)
   * [Developing](#developing)
@@ -453,6 +456,42 @@ eligible.Referral.inquiry({
 ```js
 eligible.Referral.create(params)
   .then(function(referral) {
+  })
+  .catch(done);
+```
+
+
+### Precertification
+
+#### Precertification Inquiry
+
+```js
+eligible.Precertification.inquiry({
+  payer_id: '60054',
+  payer_name: 'Aetna',
+  provider_type: 'attending',
+  provider_last_name: 'Doe',
+  provider_first_name: 'John',
+  provider_npi: '0123456789',
+  provider_phone_number: '1234567890',
+  provider_taxonomy_code: '291U00000X',
+  member_id: 'ZZZ445554301',
+  member_first_name: 'IDA',
+  member_last_name: 'FRANKLIN',
+  member_dob: '1701-12-12',
+  from_date: '2014-01-01',
+  to_date: '2015-01-01',
+})
+.then(function(precert) {
+})
+.catch(done);
+```
+
+#### Create A Precertification
+
+```js
+eligible.Precertification.create(params)
+  .then(function(precert) {
   })
   .catch(done);
 ```

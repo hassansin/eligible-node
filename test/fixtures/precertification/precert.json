@@ -44,8 +44,9 @@
     "relationship": "spouse"
   },
   "event": {
-    "service_type_code": "33",
+    "service_type_code": "18",
     "place_of_service": "11",
+    "level_of_service": "elective",
     "diagnosis": [
       {
         "code": "8472"
@@ -58,9 +59,11 @@
       }
     ],
     "delivery": {
-      "quantity_type": "visits",
-      "quantity": "2"
+      "quantity_type": "days",
+      "quantity": "1"
     },
+    "from_date": "2014-03-15",
+    "to_date": "2014-03-16",
     "message": "Important Information about Patient",
     "provider": {
       "last_name": "Good",
@@ -78,7 +81,12 @@
   "services": [
     {
       "claim_type": "professional",
-      "code": "98941"
+      "service_type_code": "12",
+      "code": "E0153",
+      "delivery": {
+        "quantity_type": "units",
+        "quantity": 1
+      }
     },
     {
       "claim_type": "professional",

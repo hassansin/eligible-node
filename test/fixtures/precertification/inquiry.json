@@ -1,0 +1,291 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/precert/inquiry?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 400,
+    "response": {
+      "created_at": "2016-01-24T21:04:44Z",
+      "eligible_id": "8ISARTIJY1JXDY",
+      "error": {
+        "response_code": "Y",
+        "response_description": "Yes",
+        "agency_qualifier_code": "",
+        "agency_qualifier_description": null,
+        "reject_reason_code": "41",
+        "reject_reason_description": "Authorization/Access Restrictions",
+        "follow_up_action_code": "C",
+        "follow_up_action_description": "Please Correct and Resubmit",
+        "details": "NPI length should be 10 digits, please correct and resubmit."
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 21:04:44 GMT",
+      "content-type": "application/json",
+      "content-length": "442",
+      "connection": "close",
+      "status": "400 Bad Request",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/precert/inquiry?payer_id=60054&payer_name=Aetna&provider_type=attending&provider_last_name=Doe&provider_first_name=John&provider_npi=0123456789&provider_phone_number=1234567890&provider_taxonomy_code=291U00000X&member_id=ZZZ445554301&member_first_name=IDA&member_last_name=FRANKLIN&member_dob=1701-12-12&from_date=2014-01-01&to_date=2015-01-01&api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "created_at": "2013-04-18T02:59:14-04:00",
+      "eligible_id": "UJ14EY3YT6R4R",
+      "type": "SUCCESS",
+      "payer": {
+        "name": "AETNA",
+        "id": "60054"
+      },
+      "requester": {
+        "first_name": null,
+        "last_name": null,
+        "middle_name": null,
+        "organization_name": "Some Imaging",
+        "npi": "1234567890",
+        "taxonomy_code": null
+      },
+      "subscriber": {
+        "first_name": "BENJAMIN",
+        "last_name": "FRANKLIN",
+        "middle_name": "M",
+        "id": "1234567890",
+        "ssn": null,
+        "dob": "1966-09-09",
+        "gender": null,
+        "address": {
+          "street_line_1": null,
+          "street_line_2": null,
+          "city": null,
+          "state": null,
+          "zip": null
+        }
+      },
+      "dependent": {
+        "first_name": "BILL",
+        "last_name": "FRANKLIN",
+        "middle_name": "M",
+        "ssn": "987987987",
+        "dob": "1966-09-09",
+        "gender": "M",
+        "relationship_code": "19",
+        "address": {
+          "street_line_1": "Some street",
+          "street_line_2": "second",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "94109"
+        }
+      },
+      "patient_events": [
+        {
+          "place_of_service": "22",
+          "diagnosis_codes": [
+            "72610"
+          ],
+          "message": "SEE CORRESPONDENCE FOR DETAILS",
+          "certification": {
+            "action_code": "A3",
+            "action_label": "Not Certified",
+            "id": "1234567",
+            "decision_code": "06",
+            "decision_label": "No Credit Allowed",
+            "admin_ref_number": "ADMINREF1234",
+            "previous_review_auth_number": "PREVAUTH1234",
+            "expiration_date": "2015-09-09",
+            "effective_start_date": "2012-09-09",
+            "effective_end_date": "2014-12-09"
+          },
+          "providers": [
+            {
+              "type": "Facility",
+              "first_name": null,
+              "last_name": null,
+              "middle_name": null,
+              "organization_name": "Some Imaging",
+              "npi": "1234567890",
+              "taxonomy_code": "203BS0133X",
+              "address": {
+                "street_line_1": "Some street",
+                "street_line_2": "second",
+                "city": "San Francisco",
+                "state": "CA",
+                "zip": "94109"
+              }
+            },
+            {
+              "type": "Attending Physician",
+              "first_name": "Benjamin",
+              "last_name": "Franklin",
+              "middle_name": "J",
+              "organization_name": null,
+              "npi": "987654321",
+              "taxonomy_code": null,
+              "address": {
+                "street_line_1": null,
+                "street_line_2": null,
+                "city": null,
+                "state": null,
+                "zip": null
+              }
+            }
+          ],
+          "services": [
+            {
+              "procedure_code": "12345",
+              "procedure_modifiers": [
+                "25",
+                "65"
+              ],
+              "amount": "50",
+              "quantity": "2",
+              "message": "SERVICE CERTIFICATION",
+              "delivery": {
+                "quantity": "1",
+                "type": "visits",
+                "frequency": "3 days",
+                "time_period": "21",
+                "time_period_qualifier": "day"
+              },
+              "certification": {
+                "action_code": "A3",
+                "action_label": "Not Certified",
+                "id": "123456789",
+                "decision_code": "0N",
+                "decision_label": "No Prior Approval",
+                "admin_ref_number": "ADMINREF1234",
+                "previous_review_auth_number": "PREVAUTH1234",
+                "service_start_date": "2014-04-30",
+                "service_end_date": "2014-05-30",
+                "issue_date": "2011-09-09",
+                "expiration_date": "2015-09-09",
+                "effective_start_date": "2012-09-09",
+                "effective_end_date": "2014-12-09"
+              },
+              "providers": [
+                {
+                  "type": "Facility",
+                  "first_name": null,
+                  "last_name": null,
+                  "middle_name": null,
+                  "organization_name": "Some Imaging",
+                  "npi": "1234567890",
+                  "taxonomy_code": "203BS0133X",
+                  "address": {
+                    "street_line_1": "Some street",
+                    "street_line_2": "second",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zip": "94109"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "place_of_service": "22",
+          "diagnosis_codes": [
+            "7220"
+          ],
+          "message": null,
+          "certification": {
+            "action_code": "A1",
+            "action_label": "Certified in total",
+            "id": "123456789",
+            "decision_code": null,
+            "decision_label": null,
+            "admin_ref_number": null,
+            "previous_review_auth_number": null,
+            "expiration_date": null,
+            "effective_start_date": null,
+            "effective_end_date": null
+          },
+          "providers": [
+            {
+              "type": "Facility",
+              "first_name": null,
+              "last_name": null,
+              "middle_name": null,
+              "organization_name": "Some Imaging",
+              "npi": "1234567890",
+              "taxonomy_code": null,
+              "address": {
+                "street_line_1": null,
+                "street_line_2": null,
+                "city": null,
+                "state": null,
+                "zip": null
+              }
+            },
+            {
+              "type": "Attending Physician",
+              "first_name": "Tim",
+              "last_name": "Franklin",
+              "middle_name": "P",
+              "organization_name": null,
+              "npi": "1234567890",
+              "taxonomy_code": null,
+              "address": {
+                "street_line_1": null,
+                "street_line_2": null,
+                "city": null,
+                "state": null,
+                "zip": null
+              }
+            }
+          ],
+          "services": [
+            {
+              "procedure_code": "72141",
+              "procedure_modifiers": [],
+              "amount": null,
+              "quantity": null,
+              "message": null,
+              "delivery": {
+                "quantity": "1",
+                "type": "units",
+                "frequency": null,
+                "time_period": null,
+                "time_period_qualifier": null
+              },
+              "certification": {
+                "action_code": "A1",
+                "action_label": "Certified in total",
+                "id": "1234567890",
+                "decision_code": null,
+                "decision_label": null,
+                "admin_ref_number": null,
+                "previous_review_auth_number": null,
+                "service_start_date": "2014-04-30",
+                "service_end_date": "2014-07-29",
+                "issue_date": null,
+                "expiration_date": null,
+                "effective_start_date": null,
+                "effective_end_date": null
+              },
+              "providers": []
+            }
+          ]
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 21:04:45 GMT",
+      "content-type": "application/json",
+      "content-length": "8761",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]
