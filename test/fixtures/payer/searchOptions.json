@@ -1,0 +1,54 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/payers/62308/search_options?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "payer_id": "62308",
+      "search_options": [
+        [
+          "member_id",
+          "member_dob"
+        ],
+        [
+          "member_id",
+          "dependent_first_name",
+          "dependent_dob"
+        ],
+        [
+          "member_id",
+          "member_first_name",
+          "member_last_name",
+          "member_dob"
+        ],
+        [
+          "member_dob",
+          "chop_member_id"
+        ],
+        [
+          "dependent_first_name",
+          "dependent_dob",
+          "chop_member_id"
+        ],
+        [
+          "member_first_name",
+          "member_last_name",
+          "member_dob",
+          "chop_member_id"
+        ]
+      ]
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 03:12:11 GMT",
+      "content-type": "application/json",
+      "content-length": "346",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

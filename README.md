@@ -26,6 +26,11 @@ You can request an account at https://eligible.com/request-access
       * [Retrieve Single Claim Payment Report](#retrieve-single-claim-payment-report)
       * [Retrieve Specific Claim Payment Report](#retrieve-specific-claim-payment-report)
       * [Retrieve Multiple Claim Payment Report](#retrieve-multiple-claim-payment-report)
+    * [Payer](#payer)
+      * [List All Payers](#list-all-payers)
+      * [View a Payer](#view-a-payer)
+      * [Search Options](#search-options)
+      * [Search Options of a Payer](#search-options-of-a-payer)
   * [Errors](#errors)
   * [Testing](#testing)
   * [Developing](#developing)
@@ -275,6 +280,60 @@ eligible.Claim.queryPaymentReports(query)
 	})
 ```
 
+
+
+### Payer
+
+#### List All Payers
+
+```js
+eligible.Payer.all({
+    endpoint: 'coverage',
+  })
+  .then(function(payers) {
+    console.log(payers);
+  })
+```
+
+#### View a Payer
+
+```js
+eligible.Payer.retrieve('62308')
+	.then(function(payer) {
+	  return payer.searchOptions()
+	})
+	//retrieve search options for this payer
+	.then(function(searchOptions){
+	   console.log(searchOptions)
+	})
+	.catch()
+```
+
+#### Search Options
+
+```js
+eligible.Payer.searchOptions()
+	.then(function(searchOptions) {
+	  console.log(searchOptions)
+	})
+```
+
+#### Search Options of a Payer
+
+```js
+eligible.Payer.searchOptions('62308')
+	.then(function(searchOptions) {
+	})
+```
+or, using `payer` instance either:
+
+```js
+var payer = new eligible.Payer({payer_id: '62308'});
+payer.searchOptions()
+  .then(function(searchOptions) {
+    console.log(searchOptions);
+  })
+```
 
 ## Errors
 

@@ -1,0 +1,132 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/payers?endpoint=precertification%20create&api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": [
+      {
+        "payer_id": "06111",
+        "names": [
+          "Oxford (UnitedHealthcare/Oxford)",
+          "Oxford Health Plans",
+          "Oxford",
+          "UnitedHealthcare/Oxford"
+        ],
+        "created_at": "2014-07-20T07:17:28Z",
+        "updated_at": "2016-01-22T16:55:46Z",
+        "supported_endpoints": [
+          {
+            "endpoint": "precertification create",
+            "pass_through_fee": 0,
+            "enrollment_required": false,
+            "signature_required": false,
+            "average_enrollment_process_time": null,
+            "blue_ink_required": false,
+            "message": null,
+            "enrollment_mandatory_fields": [],
+            "status": "available",
+            "status_details": null,
+            "status_updated_at": "2014-07-03T03:49:50+00:00",
+            "original_signature_pdf": null
+          }
+        ]
+      },
+      {
+        "payer_id": "87726",
+        "names": [
+          "AARP MedicareComplete insured through UnitedHealthcare (AARP MedicareComplete Mosaic",
+          "AARP MedicareComplete insured through UnitedHealthcare (formerly Secure Horizons)",
+          "AmeriChoice by UnitedHealthcare (NYU) (UnitedHealthcare Community Plan)",
+          "AmeriChoice FL  HI  LA  MD  MS CAN  OH  RI  TX  WA  WI (UnitedHealthcare Community Plan )",
+          "AmeriChoice of Nebraska (UnitedHealthcare Community Plan)",
+          "Arnett Health Plan - former payer id 95440",
+          "Definity Health Plan (UnitedHealthcare)",
+          "Empire Plan (UnitedHealthcare)",
+          "First Seniority Freedom",
+          "Harvard Pilgrim Passport Connect",
+          "MAHP (MD IPA  Optumun Choice and MLH) UnitedHealthcare",
+          "MAMSI Life and Health Insurance Co. (MLH) (Previously Payer ID 52148)",
+          "MD-Individual Practice Association  Inc. (M.D. IPA) (Previously Payer ID 52148)",
+          "OptumHealth (OptumHealth Behavior Solutions) formerly United Behavioral Health and Pacificare Behavioral Health)  former payerID 33053",
+          "OptumHealth (OptumHealth Behavioral Solutions of NM)",
+          "OptumHealth Behavior Solutions",
+          "OptumHealth Behavioral Solutions of NM (OptumHealth)",
+          "OptumHealth New Mexico",
+          "Oxford Medicare Network (AARP MedicareComplete insured through UnitedHealthcare )",
+          "Oxford Mosaic Network - AARP Medicare Complete Mosaic",
+          "UnitedHealthcare",
+          "UnitedHealthcare (Definity Health Plan) former payer ID 64159",
+          "UnitedHealthcare (Empire Plan)",
+          "UnitedHealthcare (MAHP - MD IPA  Optimum Choice  MLH) formerly MAMSI former payer ID 52148",
+          "UnitedHealthcare Community Plan - FL  HI  LA  MD  MS CAN  OH  RI  TX  WA  WI (formerly AmeriChoice or Unison)",
+          "UnitedHealthcare Community Plan - NE (formerly AmeriChoice of Nebraska)",
+          "UnitedHealthcare Community Plan - NYU (formerly AmeriChoice by UnitedHealthcare)",
+          "UnitedHealthcare Dual Complete - Oxford Medicare Network (UnitedHealthcare Community)",
+          "UnitedHealthcare Group Medicare Advantage (UnitedHealthcare Medicare Solutions)",
+          "UnitedHealthcare Medicare Solutions (UnitedHealthcare Chronic Complete) formerly Evercare",
+          "UnitedHealthcare Medicare Solutions (UnitedHealthcare Group Medicare Advantage)",
+          "UnitedHealthcare Medicare Solutions (UnitedHealthcare MedicalDirect (formerly SecureHorizons)",
+          "UnitedHealthcare Medicare Solutions (UnitedHealthcare MedicareComplete) formerly SecureHorizons",
+          "UnitedHealthcare Medicare Solutions (UnitedHealthcare Nursing Home Plan) formerly Evercare",
+          "UnitedHealthcare MedicareComplete (UnitedHealthcare Medicare Solutions) formerly SecureHorizons",
+          "UnitedHealthcare West (formerly known as PacifiCare) former payer ids 95962  95964  95959  95999",
+          "UnitedHealthcare West (formerly PacifiCare) (UnitedHealthcare)",
+          "Alliance PPO  LLC  (Previously Payer ID 52148)",
+          "AmeriChoice FL  HI  LA  MD  MS  CAN  OH  RI  TX  WA  WI (UnitedHealthcare Community Plan )",
+          "AmeriChoice by UnitedHealthcare (NYU)",
+          "AmeriChoice of NE",
+          "Arnett Health Plans **  Former PayerID 95440",
+          "Capital Community Health Plan",
+          "Definity Health Plan",
+          "Empire Plan",
+          "MAHP (MD IPA  Optimum Choice and MLH)",
+          "MAMSI Life and Health Insurance Co. (MLH)  (Previously Payer ID 52148)",
+          "MD - Individual Practice Association  Inc. (M.D. IPA)  (Previously Payer ID 52148)",
+          "OptumHealth (OptumHealth Behavior Solutions) formerly United Behavioral Health and PacifiCare Behavioral Health)  former payer ID 33053",
+          "SecureHorizons MedicareComplete",
+          "SecureHorizons MedicareDirect",
+          "Unison OH (UnitedHealthcare Community Plan)",
+          "UnitedHealthcare West (formerly know as PacifiCare) former payer ids 95962  95964  95959  95999",
+          "UnitedHealthcare / MAHP - MD IPA, Optimum Choice and MLH (formerly MAMSI Payer ID 52148)",
+          "UnitedHealthcare West / formerly PacifiCare CO, AZ",
+          "Definity Health",
+          "MAHP/MAMSI (Previous payer ID was 54128)",
+          "UHCWest (Pacificare)",
+          "UnitedHealthcare Community Plan (OH)",
+          "UnitedHealthcare Community Plan (PA TN SC)",
+          "United HealthCare"
+        ],
+        "created_at": "2014-07-20T07:17:20Z",
+        "updated_at": "2016-01-22T21:11:11Z",
+        "supported_endpoints": [
+          {
+            "endpoint": "precertification create",
+            "pass_through_fee": 0,
+            "enrollment_required": false,
+            "signature_required": false,
+            "average_enrollment_process_time": null,
+            "blue_ink_required": false,
+            "message": null,
+            "enrollment_mandatory_fields": [],
+            "status": "available",
+            "status_details": null,
+            "status_updated_at": "2014-07-03T03:49:50+00:00",
+            "original_signature_pdf": null
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 01:47:34 GMT",
+      "content-type": "application/json",
+      "content-length": "4850",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]
