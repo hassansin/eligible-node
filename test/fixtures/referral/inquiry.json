@@ -1,0 +1,53 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/referral/inquiry?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 400,
+    "response": {
+      "created_at": "2016-01-24T12:21:33Z",
+      "eligible_id": "8IS26QHA2R7N6V",
+      "error": {
+        "response_code": "Y",
+        "response_description": "Yes",
+        "agency_qualifier_code": "",
+        "agency_qualifier_description": null,
+        "reject_reason_code": "41",
+        "reject_reason_description": "Authorization/Access Restrictions",
+        "follow_up_action_code": "C",
+        "follow_up_action_description": "Please Correct and Resubmit",
+        "details": "NPI length should be 10 digits, please correct and resubmit."
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 12:21:33 GMT",
+      "content-type": "application/json",
+      "content-length": "442",
+      "connection": "close",
+      "status": "400 Bad Request",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/referral/inquiry?payer_id=60054&payer_name=Aetna&provider_type=attending&provider_last_name=Doe&provider_first_name=John&provider_npi=0123456789&provider_phone_number=1234567890&provider_taxonomy_code=291U00000X&member_id=ZZZ445554301&member_first_name=IDA&member_last_name=FRANKLIN&member_dob=1701-12-12&from_date=2014-01-01&to_date=2015-01-01&api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "x12": "ISA*00*          *00*          *ZZ*ELIGIB         *ZZ*16618845       *160124*0721*^*00501*001000059*0*P*:~GS*HI*ELIGIB*16618845*20160124*07213753*1*X*005010X215~ST*278*0001*005010X215~BHT*0007*49*8IS26QQKIGVGN1*20160124*07213753*18~HL*1**20*1~NM1*X3*2*AETNA*****PI*60054~HL*2*1*21*1~NM1*1P*1*DOE*JOHN****46~HL*3*2*22*0~TRN*1*3ea7421e-aeda-4bc9-a1fd-4de4e40deaf8*1562291693*PNT~NM1*IL*1*FRANKLIN*IDA****MI*ZZZ445554301~AAA*N**67*C~DMG*D8*17011212~SE*12*0001~GE*1*1~IEA*1*001000059~"
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 12:21:37 GMT",
+      "content-type": "application/json",
+      "content-length": "490",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

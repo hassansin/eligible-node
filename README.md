@@ -36,6 +36,9 @@ You can request an account at https://eligible.com/request-access
       * [Update a Customer](#update-a-customer)
       * [View a Customer](#view-a-customer)
       * [List Customers](#list-customers)
+    * [Referral](#referral)
+      * [Referral Inquiry](#referral-inquiry)
+      * [Create A Referral](#create-a-referral)
   * [Errors](#errors)
   * [Testing](#testing)
   * [Developing](#developing)
@@ -408,6 +411,43 @@ eligible.Customer.all({
   })
   .catch();
 ```
+
+
+### Referral
+
+#### Referral Inquiry
+
+```js
+eligible.Referral.inquiry({
+  payer_id: '60054',
+  payer_name: 'Aetna',
+  provider_type: 'attending',
+  provider_last_name: 'Doe',
+  provider_first_name: 'John',
+  provider_npi: '0123456789',
+  provider_phone_number: '1234567890',
+  provider_taxonomy_code: '291U00000X',
+  member_id: 'ZZZ445554301',
+  member_first_name: 'IDA',
+  member_last_name: 'FRANKLIN',
+  member_dob: '1701-12-12',
+  from_date: '2014-01-01',
+  to_date: '2015-01-01',
+})
+.then(function(referral) {
+})
+.catch(done);
+```
+
+#### Create A Referral
+
+```js
+eligible.Referral.create(params)
+  .then(function(referral) {
+  })
+  .catch(done);
+```
+
 ## Errors
 
 The library throws following error objects.
