@@ -94,6 +94,7 @@ describe('Referral', function() {
           .catch(done);
       });
 
+    // Sandbox implementation pending
     it.skip('should create new referral', function(done) {
       Referral.create(require('./fixtures/referral/referral.json'))
       .then(function(referral) {

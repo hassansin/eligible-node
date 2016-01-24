@@ -260,4 +260,24 @@ describe('Claim', function() {
 
 
   });
+
+  describe('#realtime', function() {
+
+    playback('claim/realtime');
+
+    it('exists as public method on Claim', function() {
+      expect(Claim).to.have.property('realtime');
+    });
+
+    it('should get realtime claim', function(done) {
+      Claim.realtime(require('./fixtures/claim/claim.json'))
+        .then(function(claim) {
+          expect(claim).to.have.property('id');
+          done();
+        })
+        .catch(done);
+    });
+
+  });
+
 });

@@ -26,6 +26,7 @@ You can request an account at https://eligible.com/request-access
       * [Retrieve Single Claim Payment Report](#retrieve-single-claim-payment-report)
       * [Retrieve Specific Claim Payment Report](#retrieve-specific-claim-payment-report)
       * [Retrieve Multiple Claim Payment Report](#retrieve-multiple-claim-payment-report)
+      * [Realtime Adjudication & Estimate](#realtime-adjudication--estimate)
     * [Payer](#payer)
       * [List All Payers](#list-all-payers)
       * [View a Payer](#view-a-payer)
@@ -305,7 +306,15 @@ eligible.Claim.queryPaymentReports(query)
 	})
 ```
 
+#### Realtime Adjudication & Estimate
 
+```js
+eligible.Claim.realtime(params)
+  .then(function(data) {
+  })
+  .catch(function(e){
+  });
+```
 
 ### Payer
 
