@@ -1,0 +1,65 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "POST",
+    "path": "/v1.5/enrollment_npis/123/original_signature_pdf",
+    "body": {
+      "formData": {
+        "file": {
+          "_readableState": {
+            "objectMode": false,
+            "highWaterMark": 65536,
+            "buffer": [],
+            "length": 0,
+            "pipes": null,
+            "pipesCount": 0,
+            "flowing": null,
+            "ended": false,
+            "endEmitted": false,
+            "reading": false,
+            "sync": true,
+            "needReadable": false,
+            "emittedReadable": false,
+            "readableListening": false,
+            "defaultEncoding": "utf8",
+            "ranOut": false,
+            "awaitDrain": 0,
+            "readingMore": false,
+            "decoder": null,
+            "encoding": null
+          },
+          "readable": true,
+          "domain": null,
+          "_events": {},
+          "_eventsCount": 1,
+          "path": "./test/fixtures/enrollment/upload.pdf",
+          "fd": null,
+          "flags": "r",
+          "mode": 438,
+          "autoClose": true
+        }
+      },
+      "api_key": "n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn",
+      "test": "true"
+    },
+    "status": 200,
+    "response": {
+      "original_signature_pdf": {
+        "name": "signed_enrollment.pdf",
+        "created_at": "2015-02-02T19:36:20Z",
+        "updated_at": "2015-02-02T19:36:20Z",
+        "download_url": "https://gds.eligibleapi.com/v1.5/enrollment_npis/:enrollment_npi_id/original_signature_pdf/download?test=true&api_key=YOUR_API_KEY"
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Tue, 26 Jan 2016 01:13:36 GMT",
+      "content-type": "application/json",
+      "content-length": "388",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

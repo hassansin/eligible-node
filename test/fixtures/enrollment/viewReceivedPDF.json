@@ -1,0 +1,28 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/enrollment_npis/123/received_pdf?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "received_pdf": {
+        "name": "enrollment.pdf",
+        "created_at": "2015-01-16T15:22:44Z",
+        "updated_at": "2015-01-29T14:54:01Z",
+        "download_url": "https://gds.eligibleapi.com/v1.5/enrollment_npis/:enrollment_npi_id/received_pdf/download?test=true&api_key=YOUR_API_KEY",
+        "notification_message": "Please download and send us back the signed one"
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Mon, 25 Jan 2016 14:16:39 GMT",
+      "content-type": "application/json",
+      "content-length": "449",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

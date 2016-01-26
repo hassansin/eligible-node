@@ -96,7 +96,9 @@ describe('Precertification', function() {
 
     // Sandbox implementation pending
     it.skip('should create new precertification', function(done) {
-      Precertification.create(require('./fixtures/precertification/precert.json'))
+      Precertification.create(
+        require('./fixtures/precertification/precert.json')
+      )
       .then(function(precertification) {
         expect(precertification).to.have.property('eligible_id');
         done();

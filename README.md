@@ -37,6 +37,20 @@ You can request an account at https://eligible.com/request-access
       * [Update a Customer](#update-a-customer)
       * [View a Customer](#view-a-customer)
       * [List Customers](#list-customers)
+    * [Enrollment](#enrollment)
+      * [Create an Enrollment](#create-an-enrollment)
+      * [Update an Enrollment](#update-an-enrollment)
+      * [Retrieve an Enrollment](#retrieve-an-enrollment)
+      * [List Enrollments](#list-enrollments)
+      * [Received PDF](#received-pdf)
+        * [View Received PDF](#view-received-pdf)
+        * [Download Received PDF](#download-received-pdf)
+      * [Original Signature PDF](#original-signature-pdf)
+        * [Create Original Signature PDF](#create-original-signature-pdf)
+        * [Update Original Signature PDF](#update-original-signature-pdf)
+        * [View Original Signature PDF](#view-original-signature-pdf)
+        * [Delete Signature PDF](#delete-signature-pdf)
+        * [Download Signature PDF](#download-signature-pdf)
     * [Referral](#referral)
       * [Referral Inquiry](#referral-inquiry)
       * [Create A Referral](#create-a-referral)
@@ -424,7 +438,131 @@ eligible.Customer.all({
   .catch();
 ```
 
+### Enrollment
 
+#### Create an Enrollment
+
+```js
+eligible.Enrollment.create(params)
+  .then(function(enrollment) {
+    console.log(enrollment);
+  })
+  .catch();
+```
+
+#### Update an Enrollment
+
+```js
+eligible.Enrollment.update(params)
+  .then(function(enrollment) {
+    console.log(enrollment);
+  })
+  .catch();
+```
+
+#### Retrieve an Enrollment
+
+```js
+eligible.Enrollment.get(123)
+  .then(function(enrollment) {
+    console.log(enrollment);
+  })
+  .catch();
+```
+
+#### List Enrollments
+
+```js
+eligible.Enrollment.all({
+    page: 1,
+  })
+  .then(function(data) {
+    console.log(data.enrollment_npis);
+  })
+  .catch();
+```
+
+#### View Received PDF
+
+```js
+eligible.Enrollment.viewReceivedPDF('123')
+  .then(function(receivedPDF) {
+    console.log(receivedPDF.download_url);
+  })
+  .catch();
+```
+
+#### Download Received PDF
+
+Returns a readable stream when successful
+
+```js
+eligible.Enrollment.downloadReceivedPDF('123')
+  then(function(pdf) {
+    pdf.pipe(fs.createWriteStream('./received_pdf.pdf'))
+  })
+  .catch();
+```
+
+#### Create Original Signature PDF
+
+You can either pass a path to PDF or a readable stream of the pdf file:
+
+```js
+eligible.Enrollment.createOriginalSignaturePDF('123', {
+  file: './upload.pdf',
+})
+.then(function(originalSignaturePDF) {
+  console.log(originalSignaturePDF.download_url);
+})
+.catch();
+```
+
+#### Update Original Signature PDF
+
+You can either pass a path to PDF or a readable stream of the pdf file:
+
+```js
+eligible.Enrollment.updateOriginalSignaturePDF('123', {
+  file: './upload.pdf',
+})
+.then(function(originalSignaturePDF) {
+  console.log(originalSignaturePDF.download_url);
+})
+.catch();
+```
+
+#### View Original Signature PDF
+
+```js
+eligible.Enrollment.viewOriginalSignaturePDF('123')
+  .then(function(originalSignaturePDF) {
+    console.log(originalSignaturePDF.download_url);
+  })
+  .catch();
+```
+
+#### Delete Signature PDF
+
+```js
+eligible.Enrollment.deleteOriginalSignaturePDF('123')
+  .then(function(response) {
+    console.log(response.message);
+  })
+  .catch(done);
+```
+
+#### Download Signature PDF
+
+Returns a readable stream when successful
+
+```js
+eligible.Enrollment.downloadOriginalSignaturePDF('123')
+  then(function(pdf) {
+    pdf.pipe(fs.createWriteStream('./original_signature_pdf.pdf'))
+  })
+  .catch();
+```
 ### Referral
 
 #### Referral Inquiry

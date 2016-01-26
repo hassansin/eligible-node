@@ -1,0 +1,22 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "DELETE",
+    "path": "/v1.5/enrollment_npis/123/original_signature_pdf?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "message": "Original Signature Pdf deleted"
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Tue, 26 Jan 2016 02:00:43 GMT",
+      "content-type": "application/json",
+      "content-length": "61",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]
