@@ -1,0 +1,401 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "POST",
+    "path": "/v1.5/claims/realtime",
+    "body": {
+      "billing_provider": {
+        "tax_id": "27-4070722",
+        "tax_id_type": "EI",
+        "entity": "false",
+        "phone_number": "123-123-1234",
+        "organization_name": "Provider Organization",
+        "last_name": "Franklin",
+        "first_name": "Benjamin",
+        "middle_name": "",
+        "address": {
+          "street_line_1": "1842 Union Street",
+          "street_line_2": "",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "941231232"
+        },
+        "npi": "1234567893",
+        "taxonomy_code": "101YM0800X"
+      },
+      "payer": {
+        "id": "60054",
+        "name": "Aetna",
+        "address": {
+          "street_line_1": "603 3rd Ave Van",
+          "street_line_2": "",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "941231232"
+        }
+      },
+      "subscriber": {
+        "id": "1234567890",
+        "first_name": "Benjamin",
+        "last_name": "Franklin",
+        "middle_name": "",
+        "address": {
+          "street_line_1": "123 NW St",
+          "street_line_2": "",
+          "city": "Seattle",
+          "state": "WA",
+          "zip": "981171232"
+        },
+        "phone_number": "9129129121",
+        "group_id": "100012345",
+        "dob": "1974-02-06",
+        "gender": "M",
+        "group_name": ""
+      },
+      "claim": {
+        "patient_signature_on_file": "Y",
+        "direct_payment_authorized": "Y",
+        "frequency": "1",
+        "prior_authorization_number": "1234567890",
+        "accept_assignment_code": "C",
+        "total_charge": "118.05",
+        "patient_amount_paid": "0",
+        "provider_signature_on_file": "Y",
+        "diagnosis_codes": [
+          "309.24",
+          "309.0"
+        ],
+        "service_lines": [
+          {
+            "service_date_from": "2014-05-07",
+            "service_date_to": "2014-05-07",
+            "place_of_service": "11",
+            "procedure_code": "90837",
+            "procedure_modifiers": [
+              "UN"
+            ],
+            "diagnosis_code_pointers": [
+              "1"
+            ],
+            "charge_amount": "118.05",
+            "units": "1",
+            "rendering_provider": {
+              "entity": "",
+              "organization_name": "",
+              "last_name": "Franklin",
+              "first_name": "John",
+              "npi": "1234567893"
+            }
+          }
+        ]
+      },
+      "api_key": "n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn",
+      "test": "true"
+    },
+    "status": 200,
+    "response": {
+      "id": "BHU6IKOIJU",
+      "created_at": "2009-05-11T14:54:40",
+      "status_code": "adjudicated",
+      "status_label": "Claim has been adjudicated successfully.",
+      "acknowledgements": [],
+      "report": {
+        "reference_id": "31WIGIOGOPPQW",
+        "effective_date": "2008-10-06",
+        "payer": {
+          "name": " MOUNTAIN STATE BLUE CROSS/BLUE SHIELD",
+          "id": null,
+          "address": {
+            "street_line_1": "614 MARKET STREET",
+            "street_line_2": null,
+            "city": "PARKERSBURG",
+            "state": "WV",
+            "zip": "26101"
+          },
+          "contacts": [
+            {
+              "department_code": "CX",
+              "department_label": "Payers Claim Office. Location responsible for paying bills related to medical care received",
+              "name": "",
+              "details": [
+                {
+                  "type_code": "TE",
+                  "type_label": "Telephone",
+                  "value": "8669755054"
+                }
+              ]
+            }
+          ],
+          "crossover_payer": {
+            "name": "",
+            "id": ""
+          },
+          "corrected_priority_payer": {
+            "name": "",
+            "id": ""
+          }
+        },
+        "financials": {
+          "type_code": "H",
+          "type_label": "Notification Only",
+          "total_payment_amount": "0",
+          "credit": true,
+          "debit": false,
+          "payment_method_code": "NON",
+          "payment_method_label": "Non-Payment Data",
+          "payment_format_code": "",
+          "payment_format_label": "",
+          "payment_date": "2008-10-06",
+          "payment_trace_number": "7801636695",
+          "sender": {
+            "dfi_id_qualifier": "",
+            "dfi_id_qualifier_label": "",
+            "dfi_id": "",
+            "account_number": "",
+            "id": "",
+            "supplemental_code": ""
+          },
+          "receiver": {
+            "dfi_id_qualifier": "",
+            "dfi_id_qualifier_label": "",
+            "dfi_id": "",
+            "account_type": "",
+            "account_number": ""
+          }
+        },
+        "payee": {
+          "name": "SOME DOCTORS OFFICEI",
+          "npi": "999999999",
+          "address": {
+            "street_line_1": "123 MAIN STREET",
+            "street_line_2": "SUITE 100 B",
+            "city": "ANYTOWN",
+            "state": "WV",
+            "zip": "999996459"
+          },
+          "additional_ids": [
+            {
+              "type_code": "PQ",
+              "type_label": "Payee Identification",
+              "value": "9999999"
+            }
+          ]
+        },
+        "patient": {
+          "first_name": "TEST",
+          "last_name": "PATIENT",
+          "middle_name": "J",
+          "id": "123456789"
+        },
+        "service_provider": {
+          "first_name": "",
+          "last_name": "",
+          "middle_name": "",
+          "npi": ""
+        },
+        "claim": {
+          "control_number": "08280551402",
+          "received_date": "2008-10-06",
+          "expiration_date": "2014-06-09",
+          "filing_indicator_type": "16",
+          "filing_indicator_label": "Health Maintenance Organization (HMO) Medicare Risk",
+          "place_of_service": null,
+          "frequency": null,
+          "responsibility_sequence": null,
+          "status": [
+            "denied"
+          ],
+          "drg_code": "",
+          "drg_quantity": "",
+          "amount": {
+            "billed": 70,
+            "paid": 70,
+            "patient_responsibility": 0,
+            "total_coverage": null,
+            "prompt_payment_discount": null,
+            "per_day_limit": null,
+            "patient_paid": null,
+            "revised_intrest": null,
+            "negetive_ladger_balance": null,
+            "tax": null,
+            "total_claim_before_taxes": null,
+            "federal": {
+              "category_1": null,
+              "category_2": null,
+              "category_3": null,
+              "category_4": null,
+              "category_5": null
+            }
+          },
+          "adjustments": [],
+          "quantity": {
+            "actual": {
+              "covered": null,
+              "co_insured": null,
+              "life_time_reserve": null
+            },
+            "estimated": {
+              "life_time_reserve": null,
+              "non_covered": null
+            },
+            "not_replaced_blood_unit": 5,
+            "outlier_days": 14,
+            "prescription": null,
+            "visits": null,
+            "federal": {
+              "category_1": null,
+              "category_2": null,
+              "category_3": null,
+              "category_4": null,
+              "category_5": null
+            }
+          },
+          "rendering_provider_ids": [
+            {
+              "id_type": "1C",
+              "id_type_label": "Medicare Provider Number",
+              "id": "12345678"
+            },
+            {
+              "id_type": "1D",
+              "id_type_label": "Medicaid Provider Number",
+              "id": "12345678"
+            }
+          ],
+          "moa_codes": [
+            "MA01",
+            "MA27",
+            "MA07"
+          ],
+          "allowed_amount": 111.12,
+          "service_lines": [
+            {
+              "procedure_qualifier": "HC>99212",
+              "procedure_code": null,
+              "procedure_modifiers": [],
+              "revenue_code": null,
+              "service_start": "2004-12-08",
+              "service_end": "2004-12-08",
+              "amount": {
+                "billed": 140,
+                "paid": 70,
+                "total_coverage": null,
+                "deduction": null,
+                "tax": null,
+                "total_claim_before_taxes": null,
+                "federal": {
+                  "category_1": null,
+                  "category_2": null,
+                  "category_3": null,
+                  "category_4": null,
+                  "category_5": null
+                }
+              },
+              "quantity": {
+                "billed": 0,
+                "paid": 1,
+                "federal": {
+                  "category_1": null,
+                  "category_2": null,
+                  "category_3": null,
+                  "category_4": null,
+                  "category_5": null
+                }
+              },
+              "rendering_provider_ids": [
+                {
+                  "id_type": "1C",
+                  "id_type_label": "Medicare Provider Number",
+                  "id": "12345678"
+                },
+                {
+                  "id_type": "1D",
+                  "id_type_label": "Medicaid Provider Number",
+                  "id": "12345678"
+                }
+              ],
+              "allowed_amount": 111.12,
+              "adjustments": [
+                {
+                  "type_code": "PR",
+                  "type_label": "Patient Responsibility",
+                  "reason_code": "31",
+                  "reason_label": "Patient cannot be identified as our insured.",
+                  "amount": 240,
+                  "quantity": 0
+                }
+              ]
+            },
+            {
+              "procedure_qualifier": "HC>99212",
+              "procedure_code": null,
+              "procedure_modifiers": [],
+              "revenue_code": null,
+              "service_start": "2004-12-10",
+              "service_end": "2004-12-10",
+              "amount": {
+                "billed": 70,
+                "paid": 70,
+                "total_coverage": null,
+                "deduction": null,
+                "tax": null,
+                "total_claim_before_taxes": null,
+                "federal": {
+                  "category_1": null,
+                  "category_2": null,
+                  "category_3": null,
+                  "category_4": null,
+                  "category_5": null
+                }
+              },
+              "quantity": {
+                "billed": 0,
+                "paid": 1,
+                "federal": {
+                  "category_1": null,
+                  "category_2": null,
+                  "category_3": null,
+                  "category_4": null,
+                  "category_5": null
+                }
+              },
+              "rendering_provider_ids": [
+                {
+                  "id_type": "1C",
+                  "id_type_label": "Medicare Provider Number",
+                  "id": "12345678"
+                },
+                {
+                  "id_type": "1D",
+                  "id_type_label": "Medicaid Provider Number",
+                  "id": "12345678"
+                }
+              ],
+              "allowed_amount": 111.12,
+              "adjustments": [
+                {
+                  "type_code": "PR",
+                  "type_label": "Patient Responsibility",
+                  "reason_code": "31",
+                  "reason_label": "Patient cannot be identified as our insured.",
+                  "amount": 240,
+                  "quantity": 0
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 20:40:04 GMT",
+      "content-type": "application/json",
+      "content-length": "10638",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

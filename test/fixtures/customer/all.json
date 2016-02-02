@@ -1,0 +1,41 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/customers?page=1&api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "customers": [
+        {
+          "customer": {
+            "id": "TN344YY67HH09KK",
+            "name": "XYZ company",
+            "site_name": "XYZ site name"
+          }
+        },
+        {
+          "customer": {
+            "id": "TN344YY67HH09KK",
+            "name": "XYZ company",
+            "site_name": "XYZ site name"
+          }
+        }
+      ],
+      "num_of_pages": 1,
+      "page": 1,
+      "per_page": 250,
+      "total": 2
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 08:09:28 GMT",
+      "content-type": "application/json",
+      "content-length": "375",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

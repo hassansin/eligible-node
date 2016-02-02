@@ -12,7 +12,7 @@ You can request an account at https://eligible.com/request-access
   * [Usage](#usage)
     * [Create instance](#create-instance)
     * [Test Mode](#test-mode)
-    * [Payer](#payer)
+    * [Example](#example)
     * [Coverage](#coverage)
       * [Retrieve Coverage](#retrieve-coverage)
       * [Retrieve Medicare](#retrieve-medicare)
@@ -26,9 +26,41 @@ You can request an account at https://eligible.com/request-access
       * [Retrieve Single Claim Payment Report](#retrieve-single-claim-payment-report)
       * [Retrieve Specific Claim Payment Report](#retrieve-specific-claim-payment-report)
       * [Retrieve Multiple Claim Payment Report](#retrieve-multiple-claim-payment-report)
+      * [Realtime Adjudication & Estimate](#realtime-adjudication--estimate)
+    * [Payer](#payer)
+      * [List All Payers](#list-all-payers)
+      * [View a Payer](#view-a-payer)
+      * [Search Options](#search-options)
+      * [Search Options of a Payer](#search-options-of-a-payer)
+    * [Customer](#customer)
+      * [Create a Customer](#create-a-customer)
+      * [Update a Customer](#update-a-customer)
+      * [View a Customer](#view-a-customer)
+      * [List Customers](#list-customers)
+    * [Enrollment](#enrollment)
+      * [Create an Enrollment](#create-an-enrollment)
+      * [Update an Enrollment](#update-an-enrollment)
+      * [Retrieve an Enrollment](#retrieve-an-enrollment)
+      * [List Enrollments](#list-enrollments)
+      * [Received PDF](#received-pdf)
+        * [View Received PDF](#view-received-pdf)
+        * [Download Received PDF](#download-received-pdf)
+      * [Original Signature PDF](#original-signature-pdf)
+        * [Create Original Signature PDF](#create-original-signature-pdf)
+        * [Update Original Signature PDF](#update-original-signature-pdf)
+        * [View Original Signature PDF](#view-original-signature-pdf)
+        * [Delete Signature PDF](#delete-signature-pdf)
+        * [Download Signature PDF](#download-signature-pdf)
+    * [Referral](#referral)
+      * [Referral Inquiry](#referral-inquiry)
+      * [Create A Referral](#create-a-referral)
+    * [Precertification](#precertification)
+      * [Precertification Inquiry](#precertification-inquiry)
+      * [Create A Precertification](#create-a-precertification)
   * [Errors](#errors)
   * [Testing](#testing)
   * [Developing](#developing)
+  * [Support Forums](#support-forums)
 
 
 ## Documentation
@@ -83,29 +115,46 @@ var eligible = Eligible(config);
 
 To make the Eligible as explorable as possible, accounts have test-mode as well as live-mode. See above example to enable test mode on any of your requests and hit the sandbox.
 
-### Payer
+### Example
+
+Complete example on how to use the library:
 
 ```js
-eligible.Payer.retrieve(62308)
-.then(function(payer){
-  console.log(payer)
-})
-.catch(Eligible.APIConnectionError, function(e){
-  console.log('Connection Error');
-})
-.catch(Eligible.AuthenticationError, function(e){
-    console.log('Authentication Error', e.message, e.code, e.response);
-})
-.catch(function(e){
-  console.log(e);
+
+var Eligible = require('eligible-node');
+var eligible = Eligible({
+    apiKey: 'n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn',
+    isTest: true
 });
 
-```
+// Retrieve a payer and it's search options
 
+eligible.Payer.retrieve('62308')
+  .then(function(payer){
+    console.log(payer.payer_id);
+    return payer.searchOptions(); //retrieve search options
+  })
+  .then(function(searchOptions){
+    console.log(searchOptions)
+  })
+  .catch(Eligible.APIConnectionError, function(e){
+    console.log('Connection Error');
+  })
+  .catch(Eligible.AuthenticationError, function(e){
+      console.log('Authentication Error', e.message, e.code, e.response);
+  })
+  .catch(Eligible.InvalidRequestError, function(e){
+      console.log('InvalidRequestError', e.message, e.code, e.response);
+  })
+  .catch(function(e){
+    console.log(e);
+  });
+```
+See [Errors](#errors) for a list of Error types.
 
 ### Coverage
 
-#### Retrieve Coverage
+#### [Retrieve Coverage](https://account.eligible.com/rest#retrieve-coverage)
 
 ```js
 eligible.Coverage.all({
@@ -127,7 +176,7 @@ eligible.Coverage.all({
 });
 ```
 
-#### Retrieve Medicare
+#### [Retrieve Medicare](https://account.eligible.com/rest#retrieve-medicare)
 
 ```js
 eligible.Coverage.medicare({
@@ -142,7 +191,7 @@ eligible.Coverage.medicare({
 });
 ```
 
-#### Retrieve Cost Estimates
+#### [Retrieve Cost Estimates](https://account.eligible.com/rest#cost-estimates)
 
 ```js
 eligible.Coverage.costEstimates({
@@ -161,7 +210,7 @@ eligible.Coverage.costEstimates({
 
 ### Payment
 
-#### Payment Status
+#### [Payment Status](https://account.eligible.com/rest#payment-status)
 
 ```js
 eligible.Payment.status({
@@ -189,10 +238,10 @@ eligible.Payment.status({
 
 ### Claim
 
-#### Create a Claim
+#### [Create a Claim](https://account.eligible.com/rest#claim_and_reports_create_a_claim)
 
 ```js
-eligible.Claim.create(params)
+eligible.Claim.create(params)  // example params can be found in the REST document of this endpoint
   .then(function(claim) { // returns a claim instance
     console.log(claim);
     return claim.acknowledgements(); // get acknowledgements for this claim
@@ -205,7 +254,7 @@ eligible.Claim.create(params)
   });
 ```
 
-#### Retrieve Single Claim Acknowledgements
+#### [Retrieve Single Claim Acknowledgements](https://account.eligible.com/rest#claim_and_reports_claim_acknowledgements_retrieve_single)
 
 ```js
 eligible.Claim.getAcknowledgements('12121212')
@@ -224,7 +273,7 @@ claim.acknowledgements()
   })
 ```
 
-#### Retrieve Multiple Claims Acknowledgements
+#### [Retrieve Multiple Claims Acknowledgements](https://account.eligible.com/rest#claim_and_reports_claim_acknowledgements_retrieve_multiple)
 
 ```js
 eligible.Claim.queryAcknowledgements(query)
@@ -232,7 +281,7 @@ eligible.Claim.queryAcknowledgements(query)
   })
 ```
 
-#### Retrieve Single Claim Payment Report
+#### [Retrieve Single Claim Payment Report](https://account.eligible.com/rest#claim_and_reports_claim_payment_reports_retrieve_single)
 
 ```js
 eligible.Claim.getPaymentReport('BDA85HY09IJ')
@@ -250,7 +299,7 @@ claim.paymentReports()
   })
 ```
 
-#### Retrieve Specific Claim Payment Report
+#### [Retrieve Specific Claim Payment Report](https://account.eligible.com/rest#claim_and_reports_claim_payment_reports_retrieve_specific)
 
 ```js
 eligible.Claim.getPaymentReport('BDA85HY09IJ', 'ABX45DGER44')
@@ -267,7 +316,7 @@ claim.paymentReports('ABX45DGER44')
   })
 ```
 
-#### Retrieve Multiple Claim Payment Report
+#### [Retrieve Multiple Claim Payment Report](https://account.eligible.com/rest#claim_and_reports_claim_payment_reports_retrieve_multiple)
 
 ```js
 eligible.Claim.queryPaymentReports(query)
@@ -275,6 +324,316 @@ eligible.Claim.queryPaymentReports(query)
 	})
 ```
 
+#### [Realtime Adjudication & Estimate](https://account.eligible.com/rest#claim_and_reports_realtime_claim)
+
+```js
+eligible.Claim.realtime(params) // example params can be found in the REST document of this endpoint
+  .then(function(data) {
+  })
+  .catch(function(e){
+  });
+```
+
+### Payer
+
+#### [List All Payers](https://account.eligible.com/rest#list_payers)
+
+```js
+eligible.Payer.all({
+    endpoint: 'coverage',
+  })
+  .then(function(payers) {
+    console.log(payers);
+  })
+```
+
+#### [View a Payer](https://account.eligible.com/rest#view_payer)
+
+```js
+eligible.Payer.retrieve('62308')
+	.then(function(payer) {
+	  return payer.searchOptions()
+	})
+	//retrieve search options for this payer
+	.then(function(searchOptions){
+	   console.log(searchOptions)
+	})
+	.catch()
+```
+
+#### [Search Options](https://account.eligible.com/rest#payer_search_options)
+
+```js
+eligible.Payer.searchOptions()
+	.then(function(searchOptions) {
+	  console.log(searchOptions)
+	})
+```
+
+#### [Search Options of a Payer](https://account.eligible.com/rest#search_options_of_a_payer)
+
+```js
+eligible.Payer.searchOptions('62308')
+	.then(function(searchOptions) {
+	})
+```
+or, using `payer` instance either:
+
+```js
+var payer = new eligible.Payer({payer_id: '62308'});
+payer.searchOptions()
+  .then(function(searchOptions) {
+    console.log(searchOptions);
+  })
+```
+
+### Customer
+
+#### [Create a Customer](https://account.eligible.com/rest#create_customers)
+
+```js
+eligible.Customer.create({
+    customer: {
+      name: 'ABC company',
+    },
+  })
+  .then(function(customer) {
+    console.log(customer.id);
+  })
+  .catch();
+```
+
+#### [Update a Customer](https://account.eligible.com/rest#update_customers)
+
+```js
+eligible.Customer.update('TN344YY67HH09KK', {
+    customer: {
+      name: 'XYZ company',
+    },
+  })
+  .then(function(customer) {
+    console.log(customer.id);
+  })
+  .catch(done);
+```
+
+#### [View a Customer](https://account.eligible.com/rest#show_customers)
+
+```js
+eligible.Customer.get('TN344YY67HH09KK')
+  .then(function(customer) {
+    console.log(customer.id);
+  })
+  .catch();
+```
+
+#### [List Customers](https://account.eligible.com/rest#list_customers)
+
+```js
+eligible.Customer.all({
+    page: 1,
+  })
+  .then(function(data) {
+    console.log(data.customers);
+  })
+  .catch();
+```
+
+### Enrollment
+
+#### [Create an Enrollment](https://account.eligible.com/rest#create-enrollment)
+
+```js
+eligible.Enrollment.create(params) // example params can be found in the REST document of this endpoint
+  .then(function(enrollment) {
+    console.log(enrollment);
+  })
+  .catch();
+```
+
+#### [Update an Enrollment](https://account.eligible.com/rest#update-enrollment)
+
+```js
+eligible.Enrollment.update(params) // example params can be found in the REST document of this endpoint
+  .then(function(enrollment) {
+    console.log(enrollment);
+  })
+  .catch();
+```
+
+#### [Retrieve an Enrollment](https://account.eligible.com/rest#retrieve-enrollment)
+
+```js
+eligible.Enrollment.get(123)
+  .then(function(enrollment) {
+    console.log(enrollment);
+  })
+  .catch();
+```
+
+#### [List Enrollments](https://account.eligible.com/rest#list-enrollment)
+
+```js
+eligible.Enrollment.all({
+    page: 1,
+  })
+  .then(function(data) {
+    console.log(data.enrollment_npis);
+  })
+  .catch();
+```
+
+#### [View Received PDF](https://account.eligible.com/rest#view-received-pdf)
+
+```js
+eligible.Enrollment.viewReceivedPDF('123')
+  .then(function(receivedPDF) {
+    console.log(receivedPDF.download_url);
+  })
+  .catch();
+```
+
+#### [Download Received PDF](https://account.eligible.com/rest#download-received-pdf)
+
+Returns a readable stream when successful
+
+```js
+eligible.Enrollment.downloadReceivedPDF('123')
+  then(function(pdf) {
+    pdf.pipe(fs.createWriteStream('./received_pdf.pdf'))
+  })
+  .catch();
+```
+
+#### [Create Original Signature PDF](https://account.eligible.com/rest#create-original-signature-pdf)
+
+You can either pass a path to PDF or a readable stream of the pdf file:
+
+```js
+eligible.Enrollment.createOriginalSignaturePDF('123', {
+  file: './upload.pdf',
+})
+.then(function(originalSignaturePDF) {
+  console.log(originalSignaturePDF.download_url);
+})
+.catch();
+```
+
+#### [Update Original Signature PDF](https://account.eligible.com/rest#update-original-signature-pdf)
+
+You can either pass a path to PDF or a readable stream of the pdf file:
+
+```js
+eligible.Enrollment.updateOriginalSignaturePDF('123', {
+  file: './upload.pdf',
+})
+.then(function(originalSignaturePDF) {
+  console.log(originalSignaturePDF.download_url);
+})
+.catch();
+```
+
+#### [View Original Signature PDF](https://account.eligible.com/rest#view-original-signature-pdf)
+
+```js
+eligible.Enrollment.viewOriginalSignaturePDF('123')
+  .then(function(originalSignaturePDF) {
+    console.log(originalSignaturePDF.download_url);
+  })
+  .catch();
+```
+
+#### [Delete Signature PDF](https://account.eligible.com/rest#delete-original-signature-pdf)
+
+```js
+eligible.Enrollment.deleteOriginalSignaturePDF('123')
+  .then(function(response) {
+    console.log(response.message);
+  })
+  .catch(done);
+```
+
+#### [Download Signature PDF](https://account.eligible.com/rest#download-original-signature-pdf)
+
+Returns a readable stream when successful
+
+```js
+eligible.Enrollment.downloadOriginalSignaturePDF('123')
+  then(function(pdf) {
+    pdf.pipe(fs.createWriteStream('./original_signature_pdf.pdf'))
+  })
+  .catch();
+```
+### Referral
+
+#### [Referral Inquiry](https://account.eligible.com/rest#referral_inquiry)
+
+```js
+eligible.Referral.inquiry({
+  payer_id: '60054',
+  payer_name: 'Aetna',
+  provider_type: 'attending',
+  provider_last_name: 'Doe',
+  provider_first_name: 'John',
+  provider_npi: '0123456789',
+  provider_phone_number: '1234567890',
+  provider_taxonomy_code: '291U00000X',
+  member_id: 'ZZZ445554301',
+  member_first_name: 'IDA',
+  member_last_name: 'FRANKLIN',
+  member_dob: '1701-12-12',
+  from_date: '2014-01-01',
+  to_date: '2015-01-01',
+})
+.then(function(referral) {
+})
+.catch(done);
+```
+
+#### [Create A Referral](https://account.eligible.com/rest#referral_creation)
+
+```js
+eligible.Referral.create(params) // example params can be found in the REST document of this endpoint
+  .then(function(referral) {
+  })
+  .catch(done);
+```
+
+
+### Precertification
+
+#### [Precertification Inquiry](https://account.eligible.com/rest#precert_inquiry)
+
+```js
+eligible.Precertification.inquiry({
+  payer_id: '60054',
+  payer_name: 'Aetna',
+  provider_type: 'attending',
+  provider_last_name: 'Doe',
+  provider_first_name: 'John',
+  provider_npi: '0123456789',
+  provider_phone_number: '1234567890',
+  provider_taxonomy_code: '291U00000X',
+  member_id: 'ZZZ445554301',
+  member_first_name: 'IDA',
+  member_last_name: 'FRANKLIN',
+  member_dob: '1701-12-12',
+  from_date: '2014-01-01',
+  to_date: '2015-01-01',
+})
+.then(function(precert) {
+})
+.catch(done);
+```
+
+#### [Create A Precertification](https://account.eligible.com/rest#precert_creation)
+
+```js
+eligible.Precertification.create(params) // example params can be found in the REST document of this endpoint
+  .then(function(precert) {
+  })
+  .catch(done);
+```
 
 ## Errors
 
@@ -317,8 +676,15 @@ To filter tests, update `grep` field in `test/mocha.opts`.
 
 To work on the library:
 
-1. Clone the repo.
-2. Install dependencies: `npm install`
-3. Fix bugs or add features. Make sure the changes pass the coding guidelines by runing: `npm run lint` or `npm run watch`
-4. Write tests. For HTTP mocking [`nock`](https://github.com/pgte/nock) library is used. Nock definitions are saved in `test/fixtures` directory
-5. Run test by `npm test` or `npm run test-coverage`
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Install dependencies: `npm install`
+4. Fix bugs or add features. Make sure the changes pass the coding guidelines by runing: `npm run lint` or `npm run watch`
+5. Write tests for your new features. For HTTP mocking [`nock`](https://github.com/pgte/nock) library is used. Nock definitions are saved in `test/fixtures` directory
+6. Run test by `npm test` or `npm run test-coverage`
+7. If all tests are passed, push to the branch (git push origin my-new-feature)
+8. Create new Pull Request
+
+## Support Forums
+
+If you find an issue with in the client library we would appricate you Send an email to support@eligible.com or add an issue in the [Issue tracker](https://github.com/eligible/eligible-node/issues) for bug reports.

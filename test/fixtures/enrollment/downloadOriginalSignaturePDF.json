@@ -1,0 +1,21 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/enrollment_npis/123/original_signature_pdf/download?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 404,
+    "response": {
+      "error": "Enrollment Npi not found."
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Tue, 26 Jan 2016 02:09:13 GMT",
+      "content-type": "application/json",
+      "content-length": "37",
+      "connection": "close",
+      "status": "404 Not Found",
+      "access-control-allow-origin": "*"
+    }
+  }
+]

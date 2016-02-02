@@ -1,0 +1,92 @@
+{
+  "payer": {
+    "id": "60054",
+    "name": "Aetna"
+  },
+  "requester": {
+    "organization_name": "Best Hospital",
+    "address": {
+      "street_line_1": "1842 Union Street",
+      "street_line_2": "",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94123"
+    },
+    "npi": "1234567890"
+  },
+  "subscriber": {
+    "id": "1234567890",
+    "first_name": "Benjamin",
+    "last_name": "Franklin",
+    "middle_name": "",
+    "address": {
+      "street_line_1": "123 NW St",
+      "street_line_2": "",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98117"
+    },
+    "dob": "1974-02-06",
+    "gender": "M"
+  },
+  "dependent": {
+    "last_name": "Franklin",
+    "first_name": "Cheryl",
+    "dob": "1976-03-06",
+    "gender": "F",
+    "address": {
+      "street_line_1": "123 NW St",
+      "street_line_2": "",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98117"
+    },
+    "relationship": "spouse"
+  },
+  "event": {
+    "service_type_code": "33",
+    "place_of_service": "11",
+    "diagnosis": [
+      {
+        "code": "8472"
+      },
+      {
+        "code": "72885"
+      },
+      {
+        "code": "8471"
+      }
+    ],
+    "delivery": {
+      "quantity_type": "visits",
+      "quantity": "2"
+    },
+    "message": "Important Information about Patient",
+    "provider": {
+      "last_name": "Good",
+      "first_name": "Doctor",
+      "npi": "1234567899",
+      "address": {
+        "street_line_1": "444 AA St",
+        "street_line_2": "",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98117"
+      }
+    }
+  },
+  "services": [
+    {
+      "claim_type": "professional",
+      "code": "98941"
+    },
+    {
+      "claim_type": "professional",
+      "code": "98943"
+    },
+    {
+      "claim_type": "professional",
+      "code": "97124"
+    }
+  ]
+}

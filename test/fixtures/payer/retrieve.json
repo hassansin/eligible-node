@@ -1,0 +1,190 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/payers/foo?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 404,
+    "response": {
+      "error": "No payer found with payer_id: foo"
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 03:06:27 GMT",
+      "content-type": "application/json",
+      "content-length": "45",
+      "connection": "close",
+      "status": "404 Not Found",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "GET",
+    "path": "/v1.5/payers/62308?api_key=n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn&test=true",
+    "body": "",
+    "status": 200,
+    "response": {
+      "payer_id": "62308",
+      "names": [
+        "CIGNA Health Plan",
+        "CIGNA Premier Plus",
+        "EQUICOR",
+        "EQUICOR - PPO",
+        "cigna",
+        "CIGNA",
+        "CIGNA - PPA",
+        "Connecticut General (CIGNA)",
+        "Equitable (CIGNA)",
+        "HEALTHSOURCE GA",
+        "HEALTHSOURCE IN",
+        "HEALTHSOURCE KY",
+        "HEALTHSOURCE ME",
+        "HEALTHSOURCE NH",
+        "HEALTHSOURCE OH",
+        "HEALTHSOURCE PROVI",
+        "HEALTHSOURCE SOUTH",
+        "PROVIDENT",
+        "TYSON FOODS",
+        "Cigna",
+        "CIGNA Behavioral Health",
+        "Cigna Healthcare (Medical)"
+      ],
+      "created_at": "2014-07-20T07:17:20Z",
+      "updated_at": "2016-01-23T08:23:26Z",
+      "supported_endpoints": [
+        {
+          "endpoint": "coverage",
+          "pass_through_fee": 0,
+          "enrollment_required": false,
+          "signature_required": false,
+          "average_enrollment_process_time": null,
+          "blue_ink_required": false,
+          "message": "",
+          "enrollment_mandatory_fields": [],
+          "status": "available",
+          "status_details": "Payer is working fine.",
+          "status_updated_at": "2016-01-23T08:23:26Z",
+          "original_signature_pdf": null
+        },
+        {
+          "endpoint": "cost estimate",
+          "pass_through_fee": 0,
+          "enrollment_required": false,
+          "signature_required": false,
+          "average_enrollment_process_time": null,
+          "blue_ink_required": false,
+          "message": "",
+          "enrollment_mandatory_fields": [],
+          "status": "available",
+          "status_details": "Payer is working fine.",
+          "status_updated_at": "2016-01-23T08:23:26Z",
+          "original_signature_pdf": null
+        },
+        {
+          "endpoint": "fetch and append",
+          "pass_through_fee": 0,
+          "enrollment_required": false,
+          "signature_required": false,
+          "average_enrollment_process_time": null,
+          "blue_ink_required": false,
+          "message": "",
+          "enrollment_mandatory_fields": [],
+          "status": "available",
+          "status_details": "Payer is working fine.",
+          "status_updated_at": "2016-01-23T08:23:26Z",
+          "original_signature_pdf": null
+        },
+        {
+          "endpoint": "professional claims",
+          "pass_through_fee": 0,
+          "enrollment_required": false,
+          "signature_required": false,
+          "average_enrollment_process_time": null,
+          "blue_ink_required": false,
+          "message": null,
+          "enrollment_mandatory_fields": [],
+          "status": "available",
+          "status_details": "Payer is working fine.",
+          "status_updated_at": "2015-12-04T19:19:52Z",
+          "original_signature_pdf": null
+        },
+        {
+          "endpoint": "dental claims",
+          "pass_through_fee": 0,
+          "enrollment_required": false,
+          "signature_required": false,
+          "average_enrollment_process_time": null,
+          "blue_ink_required": false,
+          "message": null,
+          "enrollment_mandatory_fields": [],
+          "status": "available",
+          "status_details": null,
+          "status_updated_at": "2014-07-03T03:50:02Z",
+          "original_signature_pdf": null
+        },
+        {
+          "endpoint": "institutional claims",
+          "pass_through_fee": 0,
+          "enrollment_required": false,
+          "signature_required": false,
+          "average_enrollment_process_time": null,
+          "blue_ink_required": false,
+          "message": null,
+          "enrollment_mandatory_fields": [],
+          "status": "available",
+          "status_details": null,
+          "status_updated_at": "2014-07-03T03:50:00Z",
+          "original_signature_pdf": null
+        },
+        {
+          "endpoint": "payment reports",
+          "pass_through_fee": 0,
+          "enrollment_required": true,
+          "signature_required": true,
+          "average_enrollment_process_time": null,
+          "blue_ink_required": false,
+          "message": "",
+          "enrollment_mandatory_fields": [
+            "provider_name",
+            "tax_id",
+            "address",
+            "npi",
+            "authorized_signer_email",
+            "authorized_signer_first_name",
+            "authorized_signer_last_name",
+            "authorized_signer_contact_number"
+          ],
+          "status": "available",
+          "status_details": null,
+          "status_updated_at": "2014-07-03T03:50:19Z",
+          "original_signature_pdf": null
+        },
+        {
+          "endpoint": "payment status",
+          "pass_through_fee": 0,
+          "enrollment_required": false,
+          "signature_required": false,
+          "average_enrollment_process_time": null,
+          "blue_ink_required": false,
+          "message": null,
+          "enrollment_mandatory_fields": [],
+          "status": "available",
+          "status_details": "Payer is working fine.",
+          "status_updated_at": "2016-01-23T06:37:11Z",
+          "original_signature_pdf": null
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 03:06:28 GMT",
+      "content-type": "application/json",
+      "content-length": "3466",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]

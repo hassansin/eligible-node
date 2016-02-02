@@ -1,0 +1,77 @@
+[
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "POST",
+    "path": "/v1.5/customers",
+    "body": {
+      "api_key": "n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn",
+      "test": "true"
+    },
+    "status": 400,
+    "response": {
+      "error": "customer should not be blank."
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 09:10:28 GMT",
+      "content-type": "application/json",
+      "content-length": "41",
+      "connection": "close",
+      "status": "400 Bad Request",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "POST",
+    "path": "/v1.5/customers",
+    "body": {
+      "customer": "foo",
+      "api_key": "n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn",
+      "test": "true"
+    },
+    "status": 400,
+    "response": {
+      "error": "customer name should not be blank."
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 09:10:29 GMT",
+      "content-type": "application/json",
+      "content-length": "46",
+      "connection": "close",
+      "status": "400 Bad Request",
+      "access-control-allow-origin": "*"
+    }
+  },
+  {
+    "scope": "https://gds.eligibleapi.com:443",
+    "method": "POST",
+    "path": "/v1.5/customers",
+    "body": {
+      "customer": {
+        "name": "ABC company"
+      },
+      "api_key": "n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn",
+      "test": "true"
+    },
+    "status": 200,
+    "response": {
+      "customer": {
+        "id": "TN344YY67HH09KK",
+        "name": "ABC company",
+        "site_name": "ABC site name"
+      }
+    },
+    "headers": {
+      "server": "nginx/1.8.0",
+      "date": "Sun, 24 Jan 2016 09:10:29 GMT",
+      "content-type": "application/json",
+      "content-length": "113",
+      "connection": "close",
+      "status": "200 OK",
+      "access-control-allow-origin": "*",
+      "strict-transport-security": "max-age=63072000; includeSubdomains; preload"
+    }
+  }
+]
