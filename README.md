@@ -72,7 +72,7 @@ and expected response formats.
 
 ## Requirements
 
-Node.js 0.8.0 and above
+Node.js 0.12 and above
 
 
 ## Installation

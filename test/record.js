@@ -28,7 +28,16 @@ module.exports = function(name, rerecord) {
         // Definitions found, load them
 
         hasFixture = true;
-        nock.load(fixturePath);
+        var nockDefs = nock.loadDefs(fixturePath);
+        nockDefs.forEach(function(def) {
+          def.filteringRequestBody = function(body, aRecordedBody) {
+            if (aRecordedBody.formData && aRecordedBody.formData.file) {
+              delete aRecordedBody.formData.file._eventsCount;
+            }
+            return body.replace('"_eventsCount":1,','');
+          };
+        });
+        nock.define(nockDefs);
       }
       return done();
     });
