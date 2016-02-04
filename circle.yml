@@ -1,0 +1,4 @@
+test:
+  override:
+    - nvm use 4.2 && rm -rf node_modules && npm install && npm test
+    - nvm use 0.12 && rm -rf node_modules && npm install && npm test
