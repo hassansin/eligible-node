@@ -160,7 +160,7 @@ describe('Enrollment', function() {
 
     it('should throw InvalidRequestError when no enrollment_npi_id is passed',
       function(done) {
-        Enrollment.get()
+        Enrollment.viewReceivedPDF()
           .then(function() {
             // Success, where we were expecting an error - test should fail
             done(new Error('Expecting InvalidRequestError, got 200'));
@@ -195,7 +195,7 @@ describe('Enrollment', function() {
 
     it('should throw InvalidRequestError when no enrollment_npi_id is passed',
       function(done) {
-        Enrollment.get()
+        Enrollment.downloadReceivedPDF ()
           .then(function() {
             // Success, where we were expecting an error - test should fail
             done(new Error('Expecting InvalidRequestError, got 200'));
@@ -234,7 +234,7 @@ describe('Enrollment', function() {
 
     it('should throw InvalidRequestError when no enrollment_npi_id is passed',
       function(done) {
-        Enrollment.get()
+        Enrollment.createOriginalSignaturePDF()
           .then(function() {
             // Success, where we were expecting an error - test should fail
             done(new Error('Expecting InvalidRequestError, got 200'));
@@ -272,7 +272,7 @@ describe('Enrollment', function() {
 
     it('should throw InvalidRequestError when no enrollment_npi_id is passed',
       function(done) {
-        Enrollment.get()
+        Enrollment.updateOriginalSignaturePDF()
           .then(function() {
             // Success, where we were expecting an error - test should fail
             done(new Error('Expecting InvalidRequestError, got 200'));
@@ -310,7 +310,7 @@ describe('Enrollment', function() {
 
     it('should throw InvalidRequestError when no enrollment_npi_id is passed',
       function(done) {
-        Enrollment.get()
+        Enrollment.viewOriginalSignaturePDF()
           .then(function() {
             // Success, where we were expecting an error - test should fail
             done(new Error('Expecting InvalidRequestError, got 200'));
@@ -346,7 +346,7 @@ describe('Enrollment', function() {
 
     it('should throw InvalidRequestError when no enrollment_npi_id is passed',
       function(done) {
-        Enrollment.get()
+        Enrollment.deleteOriginalSignaturePDF()
           .then(function() {
             // Success, where we were expecting an error - test should fail
             done(new Error('Expecting InvalidRequestError, got 200'));
@@ -381,7 +381,7 @@ describe('Enrollment', function() {
 
     it('should throw InvalidRequestError when no enrollment_npi_id is passed',
       function(done) {
-        Enrollment.get()
+        Enrollment.downloadOriginalSignaturePDF()
           .then(function() {
             // Success, where we were expecting an error - test should fail
             done(new Error('Expecting InvalidRequestError, got 200'));
