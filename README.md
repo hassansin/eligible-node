@@ -1,6 +1,7 @@
 # eligible-node
 
 [![Circle CI](https://circleci.com/gh/eligible/eligible-node.svg?style=svg&circle-token=e2b9b0bf71b7e2a14f2e77b85e1cc75de9f9a24e)](https://circleci.com/gh/eligible/eligible-node)
+[![npm version](https://badge.fury.io/js/eligible-node.svg)](https://www.npmjs.com/package/eligible-node)
 
 Node.js bindings for Eligible APIs (https://eligible.com). Eligible is built for developers needing HIPAA compliant connectivity to health insurance companies.
 
