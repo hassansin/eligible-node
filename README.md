@@ -1,6 +1,7 @@
 # eligible-node
 
 [![Circle CI](https://circleci.com/gh/eligible/eligible-node.svg?style=svg&circle-token=e2b9b0bf71b7e2a14f2e77b85e1cc75de9f9a24e)](https://circleci.com/gh/eligible/eligible-node)
+[![npm version](https://badge.fury.io/js/eligible-node.svg)](https://www.npmjs.com/package/eligible-node)
 
 Node.js bindings for Eligible APIs (https://eligible.com). Eligible is built for developers needing HIPAA compliant connectivity to health insurance companies.
 
@@ -663,7 +664,7 @@ Use the following commands to run tests or test coverage:
 
 ```sh
 npm test
-npm run test-coverage
+npm run coverage
 ```
 
 Note that, by default running above commands will mock HTTP requests using [nock](https://github.com/pgte/nock) library. To disable mocking and make actaul calls against eligible server, pass `NOCK_OFF=true` enviroment variable:
@@ -681,7 +682,7 @@ To work on the library:
 3. Install dependencies: `npm install`
 4. Fix bugs or add features. Make sure the changes pass the coding guidelines by runing: `npm run lint` or `npm run watch`
 5. Write tests for your new features. For HTTP mocking [`nock`](https://github.com/pgte/nock) library is used. Nock definitions are saved in `test/fixtures` directory
-6. Run test by `npm test` or `npm run test-coverage`
+6. Run test by `npm test` or `npm run coverage`
 7. If all tests are passed, push to the branch (git push origin my-new-feature)
 8. Create new Pull Request
 
