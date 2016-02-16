@@ -106,8 +106,8 @@ var eligible = Eligible({
 
 //or, pass Config object
 var config = new Eligible.Config;
-config->setApiKey('foobar')
-config->setTest(true);
+config.setApiKey('foobar')
+config.setTest(true);
 var eligible = Eligible(config);
 
 ```
@@ -500,7 +500,7 @@ Returns a readable stream when successful
 
 ```js
 eligible.Enrollment.downloadReceivedPDF('123')
-  then(function(pdf) {
+  .then(function(pdf) {
     pdf.pipe(fs.createWriteStream('./received_pdf.pdf'))
   })
   .catch();
