@@ -58,6 +58,9 @@ You can request an account at https://eligible.com/request-access
     * [Precertification](#precertification)
       * [Precertification Inquiry](#precertification-inquiry)
       * [Create A Precertification](#create-a-precertification)
+    * [x12](#x12)
+      * [Simple Post](#simple-post)
+      * [MIME Post](#mime-post)
   * [Errors](#errors)
   * [Testing](#testing)
   * [Developing](#developing)
@@ -635,6 +638,29 @@ eligible.Precertification.create(params) // example params can be found in the R
   })
   .catch(done);
 ```
+
+### x12
+
+#### Simple Post
+
+```js
+eligible.config.setApiVersion('v1.1');
+eligible.X12.post(params)//
+  .then(function(x12) {
+  })
+  .catch(done);
+```
+
+#### MIME Post
+
+```js
+eligible.config.setApiVersion('v1.1');
+eligible.X12.mimePost(params)//
+  .then(function(x12) {
+  })
+  .catch(done);
+```
+
 
 ## Errors
 
