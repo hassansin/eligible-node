@@ -61,6 +61,13 @@ You can request an account at https://eligible.com/request-access
     * [x12](#x12)
       * [Simple Post](#simple-post)
       * [MIME Post](#mime-post)
+    * [Tickets](#tickets)
+      * [Create a Ticket](#create-a-ticket)
+      * [View a Ticket](#view-a-ticket)
+      * [Update a Ticket](#update-a-ticket)
+      * [List Tickets](#list-tickets)
+      * [Create a Ticket Comment](#create-a-ticket-comment)
+      * [List Comments for a Ticket](#list-comments-for-a-ticket)
   * [Errors](#errors)
   * [Testing](#testing)
   * [Developing](#developing)
@@ -661,6 +668,68 @@ eligible.X12.mimePost(params)//
   .catch(done);
 ```
 
+### Tickets
+
+#### Create a Ticket
+
+```js
+eligible.Ticket.create(params)
+  .then(function(ticket) {
+
+  })
+  .catch();
+```
+
+#### View a Ticket
+
+```js
+eligible.Ticket.retrieve('123')
+  .then(function(ticket) {
+
+  })
+  .catch();
+```
+
+
+#### Update a Ticket
+
+```js
+eligible.Ticket.update('123', params)
+  .then(function(ticket) {
+
+  })
+  .catch();
+```
+
+#### List Tickets
+
+```js
+eligible.Ticket.list()
+  .then(function(data) {
+
+  })
+  .catch();
+```
+
+#### Create a Ticket Comment
+
+```js
+eligible.Ticket.createComment('123', params)
+  .then(function(comment) {
+
+  })
+  .catch();
+```
+
+#### List Comments for a Ticket
+
+```js
+eligible.Ticket.comments('123')
+  .then(function(comments) {
+
+  })
+  .catch();
+```
 
 ## Errors
 
