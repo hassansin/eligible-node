@@ -10,7 +10,7 @@ describe('X12', function() {
 
   before(function() {
     config = new Config({
-      apiKey: 'n5Cddnj2KST6YV9J2l2ztQQ2VrdPfzA4JPbn',
+      apiKey: process.env.ELIGIBLE_API_KEY,
       isTest: true,
     });
     config.setApiVersion('v1.1');

@@ -25,7 +25,7 @@ describe('Client', function() {
 
   it('should throw AuthenticationError when api_key not provided',
     function(done) {
-      client('get', '/foo', null, new Config())
+      client('get', '/foo', null, new Config({}))
         .catch(function(e) {
           expect(e).to.be.an.instanceOf(errors.AuthenticationError);
           done();
