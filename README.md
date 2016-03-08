@@ -758,8 +758,8 @@ To catch individual errors, use [bluebird catch syntax](http://bluebirdjs.com/do
 Use the following commands to run tests or test coverage:
 
 ```sh
-npm test
-npm run coverage
+ELIGIBLE_API_KEY=API_KEY npm test
+ELIGIBLE_API_KEY=API_KEY npm run coverage
 ```
 
 Note that, by default running above commands will mock HTTP requests using [nock](https://github.com/pgte/nock) library. To disable mocking and make actaul calls against eligible server, pass `NOCK_OFF=true` enviroment variable:

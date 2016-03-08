@@ -32,9 +32,10 @@ module.exports = function(name, rerecord) {
         nockDefs.forEach(function(def) {
           def.filteringRequestBody = function(body, aRecordedBody) {
             if (aRecordedBody.formData && aRecordedBody.formData.file) {
-              delete aRecordedBody.formData.file._eventsCount;
+              // Workaround
+              aRecordedBody.formData.file = JSON.parse(JSON.stringify(fs.createReadStream(aRecordedBody.formData.file.path)));
             }
-            return body.replace('"_eventsCount":1,','');
+            return body;
           };
         });
         nock.define(nockDefs);

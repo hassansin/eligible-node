@@ -4,7 +4,6 @@ var assert = require('chai').assert;
 
 describe('Config', function() {
   before(function() {
-    process.env.ELIGIBLE_API_KEY = 'baz';
     process.env.ELIGIBLE_IS_TEST = 'true';
   });
 

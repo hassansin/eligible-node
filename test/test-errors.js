@@ -6,7 +6,6 @@ function createsError(key) {
 }
 describe('Error', function() {
   before(function() {
-    process.env.ELIGIBLE_API_KEY = 'baz';
     process.env.ELIGIBLE_IS_TEST = 'true';
   });
 
