@@ -1,9 +1,13 @@
 {
   "name": "eligible-node",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Eligible Node.js bindings https://eligible.com",
   "keywords": [
-    "eligible", "healthcare", "claims", "payment status", "insurance"
+    "eligible",
+    "healthcare",
+    "claims",
+    "payment status",
+    "insurance"
   ],
   "main": "./lib/eligible.js",
   "directories": {
